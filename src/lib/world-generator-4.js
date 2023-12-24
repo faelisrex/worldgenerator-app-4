@@ -1,5 +1,6 @@
 import { createTaverns } from './extensions/buildings/createTaverns.js';
 import { createFarms } from './extensions/buildings/farms.js';
+import { createCaves } from './extensions/points-of-interests/caves.js';
 import { createBounties } from './extensions/quests/bountyQuests.js';
 import { createRetrievalQuest } from './extensions/quests/retrievalQuests.js';
 import { createCities } from './extensions/settlements/cities.js';
@@ -19,6 +20,7 @@ function World(name) {
 		npcs: [],
 		quests: [],
 		items: [],
+		pois: [],
 		countOf: {
 			settlements: 0,
 			npcs: 0,
@@ -50,6 +52,7 @@ export function Settlement(type, name) {
 		name,
 		buildings: [],
 		npcs: [],
+		pois: [],
 		countOf: 0,
 		addToWorld(worldObj) {
 			worldObj.settlements.push(this);
@@ -63,6 +66,7 @@ export function Building() {
 	return {
 		id: '',
 		name: '',
+		isPoi: false,
 		location: {},
 		npcs: []
 	};
@@ -132,10 +136,12 @@ createTowns(genParams, world, myDict);
 createTaverns(world, myDict);
 createFarms(genParams.nFarms.min, genParams.nFarms.max, world, myDict);
 
+createCaves(5, 10, world, myDict);
 //-----------------------------------------------------------------------NPCs
 world.buildings.forEach((building) => {
 	const newNpc = new Npc();
 	newNpc.id = `npc${world.countOf.npcs}`;
+	newNpc.type = 'Townfolk';
 	newNpc.firstName = getRandomEl(humanFirstNames);
 	newNpc.lastName = getRandomEl(humanLastNames);
 
