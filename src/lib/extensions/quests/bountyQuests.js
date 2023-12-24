@@ -15,9 +15,9 @@ function Bounty() {
 	});
 }
 
-export function createBounties(worldObj, dict) {
+export function createBounties(probability, worldObj, dict) {
 	worldObj.npcs.forEach((npc) => {
-		if (executeWithProbability(1 / 3)) {
+		if (executeWithProbability(probability)) {
 			const newQuest = new Bounty();
 			newQuest.id = `bounty${worldObj.countOf.quests}`;
 			newQuest.owner = npc;

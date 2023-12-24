@@ -67,7 +67,6 @@ export function Building() {
 		npcs: []
 	};
 }
-
 export function Npc() {
 	return {
 		id: '',
@@ -105,7 +104,6 @@ export function Quest() {
 		}
 	};
 }
-
 export function Item() {
 	return {
 		id: '',
@@ -116,7 +114,11 @@ export function Item() {
 const genParams = {
 	nCities: 1,
 	nTowns: 3,
-	nFarms: { min: 1, max: 3 }
+	nFarms: { min: 1, max: 3 },
+	questChance: {
+		bounty: 1 / 3,
+		retrieval: 1 / 3
+	}
 };
 
 const world = new World(getRandomEl(regionNames));
@@ -152,8 +154,8 @@ world.buildings.forEach((building) => {
 	myDict.set(newNpc.id, newNpc);
 });
 //-----------------------------------------------------------------------Quests
-createBounties(world, myDict);
-createRetrievalQuest(world, myDict);
+createBounties(genParams.questChance.bounty, world, myDict);
+createRetrievalQuest(genParams.questChance.retrieval, world, myDict);
 
 console.log(world);
 console.log(myDict);

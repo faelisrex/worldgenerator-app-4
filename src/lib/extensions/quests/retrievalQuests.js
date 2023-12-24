@@ -21,9 +21,9 @@ function RetrievalQuest() {
 	});
 }
 
-export function createRetrievalQuest(worldObj, dict) {
+export function createRetrievalQuest(probability, worldObj, dict) {
 	worldObj.npcs.forEach((npc) => {
-		if (executeWithProbability(1 / 3)) {
+		if (executeWithProbability(probability)) {
 			const newQuest = new RetrievalQuest(worldObj);
 			worldObj.countOf.quests++;
 			newQuest.id = `retrieval${worldObj.countOf.quests}`;

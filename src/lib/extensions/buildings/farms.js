@@ -53,8 +53,24 @@ const thirdFarm = [
 function Farm() {
 	const building = new Building();
 	return Object.assign({}, building, {
-		type: 'farm',
-		jobs: ['spud digger', 'chicken rancher']
+		type: 'Farm',
+		jobs: [
+			'a spud digger',
+			'a chicken rancher',
+			'a crop sower',
+			'a herb gatherer',
+			'an animal husbandman',
+			'a milkmaid',
+			'a beekeeper',
+			'a shepherd',
+			'a plowman',
+			'an orchard tender',
+			'a grain miller',
+			'a hay baler',
+			'a vegetable harvester',
+			'a vintner',
+			'an egg collector'
+		]
 	});
 }
 
