@@ -120,6 +120,7 @@
 		".svelte-kit/": true,
 		"*config*": true,
 		"node_modules/": true,
-		"package*": true
+		"package*": true,
+		"src/app.*": true
 	}
 }

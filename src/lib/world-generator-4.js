@@ -1,11 +1,12 @@
+import { createTaverns } from './extensions/buildings/createTaverns.js';
 import { createFarms } from './extensions/buildings/farms.js';
 import { createBounties } from './extensions/quests/bountyQuests.js';
 import { createRetrievalQuest } from './extensions/quests/retrievalQuests.js';
+import { createCities } from './extensions/settlements/cities.js';
+import { createTowns } from './extensions/settlements/towns.js';
 import humanFirstNames from './lists/names/human-firstNames.js';
 import humanLastNames from './lists/names/human-lastNames.js';
-import humanSettlementNames from './lists/names/human-settlementNames.js';
 import regionNames from './lists/names/regionNames.js';
-import tavernNames from './lists/names/tavernNames.js';
 import { getRandomEl } from './utils/math-functions.js';
 
 console.log('world-generator-4.js');
@@ -66,13 +67,7 @@ export function Building() {
 		npcs: []
 	};
 }
-function Tavern() {
-	const building = new Building();
-	return Object.assign({}, building, {
-		type: 'tavern',
-		jobs: ['Inn Keeper']
-	});
-}
+
 export function Npc() {
 	return {
 		id: '',
@@ -128,41 +123,11 @@ const world = new World(getRandomEl(regionNames));
 const myDict = new Map();
 
 //-----------------------------------------------------------------------Settlements
-//--------------------------------------------------------------Cities
-
-for (let ii = 0; ii < genParams.nCities; ii++) {
-	const newCity = new Settlement('City', getRandomEl(humanSettlementNames));
-	newCity.id = `city${world.countOf.settlements}`;
-	newCity.addToWorld(world);
-	world.countOf.settlements++;
-	myDict.set(newCity.id, newCity);
-}
-
-//-----------------------------------------------------------------------Towns
-for (let ii = 0; ii < genParams.nTowns; ii++) {
-	const newTown = new Settlement('Town', getRandomEl(humanSettlementNames));
-	newTown.id = `town${world.countOf.settlements}`;
-	newTown.addToWorld(world);
-	world.countOf.settlements++;
-	myDict.set(newTown.id, newTown);
-}
+createCities(genParams, world, myDict);
+createTowns(genParams, world, myDict);
 
 //-----------------------------------------------------------------------Buildings
-//--------------------------------------------------------------Taverns
-world.settlements.forEach((settlement) => {
-	const newTavern = new Tavern();
-	newTavern.type = 'Tavern';
-	newTavern.name = getRandomEl(tavernNames);
-	newTavern.id = `tavern${world.countOf.buildings}`;
-	newTavern.location = settlement;
-	settlement.buildings.push(newTavern);
-	world.buildings.push(newTavern);
-	world.countOf.buildings++;
-	myDict.set(newTavern.id, newTavern);
-});
-
-//--------------------------------------------------------------Farms
-
+createTaverns(world, myDict);
 createFarms(genParams.nFarms.min, genParams.nFarms.max, world, myDict);
 
 //-----------------------------------------------------------------------NPCs
