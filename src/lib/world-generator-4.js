@@ -1,4 +1,5 @@
 import { createFarms } from './extensions/buildings/farms.js';
+import { createRetrievalQuest } from './extensions/quests/retrievalQuests.js';
 import humanFirstNames from './lists/names/human-firstNames.js';
 import humanLastNames from './lists/names/human-lastNames.js';
 import humanSettlementNames from './lists/names/human-settlementNames.js';
@@ -111,10 +112,17 @@ export function Quest() {
 function Bounty() {
 	const quest = new Quest();
 	return Object.assign({}, quest, {
+		owner: {},
 		type: 'Bounty',
 		verbs: ['thwart', 'stab with a sharp stick', 'assassinate', 'throw off the edge of a cliff'],
 		targetNpc: {}
 	});
+}
+export function Item() {
+	return {
+		id: '',
+		name: ''
+	};
 }
 
 const genParams = {
@@ -197,6 +205,8 @@ world.npcs.forEach((npc) => {
 	world.countOf.quests++;
 	myDict.set(newQuest.id, newQuest);
 });
+
+createRetrievalQuest(world, myDict);
 
 console.log(world);
 console.log(myDict);

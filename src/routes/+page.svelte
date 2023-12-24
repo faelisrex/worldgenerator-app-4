@@ -13,17 +13,20 @@
 		</ul>
 	</div>
 </div>
-<div>
+<div class="grid m-5">
 	<h1 class="h1 text-primary-500">{world.name}</h1>
 	{#each world.settlements as settlement}
-		<div class="card p-2">
+		<div class="card p-2 my-1">
 			<h2 class="h4 text-tertiary-500 py-1">{settlement.type} of {settlement.name}</h2>
 				{#each settlement.npcs as npc}
 					<div class="m-2">
 						<p class=""><span id='{npc.id}'class="text-primary-400">{npc.getName()}</span> works as {npc.job} at {npc.building.name}</p>
 						{#each npc.quests as quest}
 							{#if quest.type === 'Bounty'}
-								<p class="">Q: {getRandomEl(['Needs help', 'Wants'])} to {getRandomEl(quest.verbs)} <a href="#{quest.targetNpc.id}" class="text-primary-500 anchor">{quest.targetNpc.getName()}</a> in {quest.targetNpc.location.name}</p>
+								<p class="">Q: {getRandomEl(['Needs help', 'Wants'])} to {getRandomEl(quest.verbs)} <a href="#{quest.targetNpc.id}" class="text-primary-500 anchor">{quest.targetNpc.getName()}</a> of {quest.targetNpc.location.name}</p>
+							{/if}
+							{#if quest.type === 'Retrieval'}
+								<p>Q: Wants to find their {quest.targetItem.name}. (it is with {quest.targetItem.inThePocketsOf.getName()})</p>
 							{/if}
 						{/each}
 					</div>
