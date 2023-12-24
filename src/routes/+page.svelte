@@ -30,7 +30,7 @@
 								</p>
 							{/if}
 							{#if quest.type === 'Retrieval'}
-								<p>Quest: Wants to find their {quest.targetItem.name}. 
+								<p>{quest.owner.firstName} {getRandomEl(['wants to find','needs help in looking for'])} their {quest.targetItem.name}. 
 									<span class="text-xs text-primary-300">
 										It is with 
 										<a href="#{quest.targetItem.inThePocketsOf.id}" class="text-primary-500 anchor"> {quest.targetItem.inThePocketsOf.getName()}</a>

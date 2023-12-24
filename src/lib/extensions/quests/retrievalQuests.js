@@ -1,13 +1,35 @@
 import { executeWithProbability, getRandomEl } from '../../utils/math-functions';
 import { Item, Quest } from '../../world-generator-4';
 
+const lostItemList = [
+	'lost axe',
+	'lost heirloom',
+	'lost cat',
+	'forgotten map',
+	'vanished amulet',
+	'large but misplaced key',
+	'journal',
+	'disappearing lantern',
+	'puppy',
+	'ring',
+	'potion bottle',
+	'spellbook of vanishing',
+	'magic talisman',
+	'ordinary not-a-grimoire book ',
+	'magic cloak',
+	'bag of gems',
+	'magic scroll',
+	'dagger'
+];
+
 function LostItem() {
 	const lostItem = new Item();
 	return Object.assign({}, lostItem, {
 		id: '',
 		type: 'Retrieval',
-		name: ['lost axe', 'lost heirloom', 'lost cat'],
-		inThePocketsOf: {}
+		name: lostItemList,
+		inThePocketsOf: {},
+		originalOwner: {}
 	});
 }
 
@@ -31,6 +53,7 @@ export function createRetrievalQuest(probability, worldObj, dict) {
 
 			const newItem = new LostItem(worldObj);
 			worldObj.countOf.items++;
+			newItem.originalOwner = npc;
 			newItem.id = `item${worldObj.countOf.items}`;
 			newItem.name = getRandomEl(newItem.name);
 			const listNpcsExceptSelf = worldObj.npcs.filter((n) => n.id != npc.id);
