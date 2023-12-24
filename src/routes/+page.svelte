@@ -23,14 +23,14 @@
 						<p class=""><span id='{npc.id}'class="text-primary-400">{npc.getName()}</span> works as {npc.job} at {npc.building.name}</p>
 						{#each npc.quests as quest}
 							{#if quest.type === 'Bounty'}
-								<p class="">Q: {getRandomEl(['Needs help in stopping', 'Wants to stop'])} <a href="#{quest.targetNpc.id}" class="text-primary-500 anchor">{quest.targetNpc.getName()}</a> 
+								<p class="">Quest: {getRandomEl(['Needs help in stopping', 'Wants to stop'])} <a href="#{quest.targetNpc.id}" class="text-primary-500 anchor">{quest.targetNpc.getName()}</a> 
 									in the {quest.targetNpc.building.name} 
 									({quest.targetNpc.type ==='Townfolk'? 'in':'near'}
 									{quest.targetNpc.location.name}) by {getRandomEl(quest.verbs)}.
 								</p>
 							{/if}
 							{#if quest.type === 'Retrieval'}
-								<p>Q: Wants to find their {quest.targetItem.name}. 
+								<p>Quest: Wants to find their {quest.targetItem.name}. 
 									<span class="text-xs text-primary-300">
 										It is with 
 										<a href="#{quest.targetItem.inThePocketsOf.id}" class="text-primary-500 anchor"> {quest.targetItem.inThePocketsOf.getName()}</a>
