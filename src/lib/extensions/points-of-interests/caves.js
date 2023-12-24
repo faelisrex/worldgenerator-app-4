@@ -72,7 +72,7 @@ export function createCaves(min, max, worldObj, dict) {
 		const location = getRandomEl(worldObj.settlements);
 
 		const newCave = new Cave();
-		newCave.id = `cave${worldObj.countOf.buildings}`;
+		newCave.id = `cave${worldObj.countOf.pois}`;
 		newCave.type = 'Cave';
 		newCave.name = `${getRandomEl(firstWordsCave)} ${getRandomEl(secondWordsCave)} ${getRandomEl(
 			thirdWordsCave

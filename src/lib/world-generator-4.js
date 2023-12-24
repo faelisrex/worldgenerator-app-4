@@ -26,7 +26,8 @@ function World(name) {
 			npcs: 0,
 			buildings: 0,
 			quests: 0,
-			items: 0
+			items: 0,
+			pois: 0
 		},
 		getSettlementById(id) {
 			this.settlements.find((s) => s.id === id);
