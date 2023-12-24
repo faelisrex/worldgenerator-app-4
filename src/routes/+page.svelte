@@ -26,7 +26,7 @@
 								<p class="">Quest: {getRandomEl(['Needs help in stopping', 'Wants to stop'])} <a href="#{quest.targetNpc.id}" class="text-primary-500 anchor">{quest.targetNpc.getName()}</a> 
 									in the {quest.targetNpc.building.name} 
 									({quest.targetNpc.type ==='Townfolk'? 'in':'near'}
-									{quest.targetNpc.location.name}) by {getRandomEl(quest.verbs)}.
+									{quest.targetNpc.location.name}) by {getRandomEl(quest.verbsSerious)} or by {getRandomEl(quest.verbsFunny)} .
 								</p>
 							{/if}
 							{#if quest.type === 'Retrieval'}

@@ -2,24 +2,23 @@ import { executeWithProbability, getRandomEl } from '../../utils/math-functions'
 import { Item, Quest } from '../../world-generator-4';
 
 const lostItemList = [
-	'lost axe',
-	'lost heirloom',
-	'lost cat',
-	'forgotten map',
-	'vanished amulet',
-	'large but misplaced key',
-	'journal',
-	'disappearing lantern',
-	'puppy',
-	'ring',
-	'potion bottle',
-	'spellbook of vanishing',
-	'magic talisman',
-	'ordinary not-a-grimoire book ',
-	'magic cloak',
-	'bag of gems',
-	'magic scroll',
-	'dagger'
+	'lost sock of eternal wandering',
+	'misplaced heirloom of questionable value',
+	'existentially confused cat',
+	'obviously-not-a-treasure map',
+	'talking amulet',
+	'key that refuses to be found',
+	'diary from a forgetful wizard',
+	"puppy that believes it's a cat",
+	'ring with commitment issues',
+	'potion bottle labeled "drink me... or not"',
+	'spellbook of vanishing ink',
+	"magic talisman that's not doing its job",
+	'ordinary not-a-grimoire book',
+	'cloak that pretends to be invisible',
+	"bag of gems that's really just pebbles",
+	'magic scroll with an illegible spell',
+	'dagger that identifies as a butter knife'
 ];
 
 function LostItem() {
