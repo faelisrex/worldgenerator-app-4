@@ -23,7 +23,7 @@ function RetrievalQuest() {
 
 export function createRetrievalQuest(worldObj, dict) {
 	worldObj.npcs.forEach((npc) => {
-		if (executeWithProbability(1)) {
+		if (executeWithProbability(1 / 3)) {
 			const newQuest = new RetrievalQuest(worldObj);
 			worldObj.countOf.quests++;
 			newQuest.id = `retrieval${worldObj.countOf.quests}`;

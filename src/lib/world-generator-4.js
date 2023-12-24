@@ -5,7 +5,7 @@ import humanLastNames from './lists/names/human-lastNames.js';
 import humanSettlementNames from './lists/names/human-settlementNames.js';
 import regionNames from './lists/names/regionNames.js';
 import tavernNames from './lists/names/tavernNames.js';
-import { getRandomEl } from './utils/math-functions.js';
+import { executeWithProbability, getRandomEl } from './utils/math-functions.js';
 
 console.log('world-generator-4.js');
 
@@ -57,16 +57,16 @@ export function Settlement(type, name) {
 		}
 	};
 }
-export function Building(name) {
+export function Building() {
 	return {
 		id: '',
-		name,
+		name: '',
 		location: {},
 		npcs: []
 	};
 }
-function Tavern(name) {
-	const building = new Building(name);
+function Tavern() {
+	const building = new Building();
 	return Object.assign({}, building, {
 		type: 'tavern',
 		jobs: ['Inn Keeper']
@@ -114,7 +114,11 @@ function Bounty() {
 	return Object.assign({}, quest, {
 		owner: {},
 		type: 'Bounty',
-		verbs: ['thwart', 'stab with a sharp stick', 'assassinate', 'throw off the edge of a cliff'],
+		verbs: [
+			'stabbing them with a sharp stick',
+			'poisoning them',
+			'pushing them off the edge of a cliff'
+		],
 		targetNpc: {}
 	});
 }
@@ -157,7 +161,9 @@ for (let ii = 0; ii < genParams.nTowns; ii++) {
 //-----------------------------------------------------------------------Buildings
 //--------------------------------------------------------------Taverns
 world.settlements.forEach((settlement) => {
-	const newTavern = new Tavern('tavern', getRandomEl(tavernNames));
+	const newTavern = new Tavern();
+	newTavern.type = 'Tavern';
+	newTavern.name = getRandomEl(tavernNames);
 	newTavern.id = `tavern${world.countOf.buildings}`;
 	newTavern.location = settlement;
 	settlement.buildings.push(newTavern);
@@ -194,16 +200,18 @@ world.buildings.forEach((building) => {
 //-----------------------------------------------------------------------Quests
 //--------------------------------------------------------------Bounties
 world.npcs.forEach((npc) => {
-	const newQuest = new Bounty();
-	newQuest.id = `bounty${world.countOf.quests}`;
-	newQuest.owner = npc;
-	npc.quests.push(newQuest);
+	if (executeWithProbability(0.25)) {
+		const newQuest = new Bounty();
+		newQuest.id = `bounty${world.countOf.quests}`;
+		newQuest.owner = npc;
+		npc.quests.push(newQuest);
 
-	const listNpcsExceptSelf = world.npcs.filter((n) => n.id != npc.id);
-	newQuest.targetNpc = getRandomEl(listNpcsExceptSelf);
-	newQuest.addToWorld(world);
-	world.countOf.quests++;
-	myDict.set(newQuest.id, newQuest);
+		const listNpcsExceptSelf = world.npcs.filter((n) => n.id != npc.id);
+		newQuest.targetNpc = getRandomEl(listNpcsExceptSelf);
+		newQuest.addToWorld(world);
+		world.countOf.quests++;
+		myDict.set(newQuest.id, newQuest);
+	}
 });
 
 createRetrievalQuest(world, myDict);
