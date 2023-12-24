@@ -1,7 +1,5 @@
 {
-	"prettier.documentSelectors": [
-		"**/*.svelte"
-	],
+	"prettier.documentSelectors": ["**/*.svelte"],
 	"tailwindCSS.classAttributes": [
 		"class",
 		"accent",
@@ -116,5 +114,12 @@
 		"transition",
 		"width",
 		"zIndex"
-	]
+	],
+	"files.exclude": {
+		".*": true,
+		".svelte-kit/": true,
+		"*config*": true,
+		"node_modules/": true,
+		"package*": true
+	}
 }
