@@ -1,0 +1,73 @@
+export default [
+  'The Whimsical Wyrm',
+  'Moonlit Mug Inn',
+  'Rusty Tankard Tavern',
+  'Enchanted Alehouse',
+  'Sapphire Stein Pub',
+  "Dragon's Roost Tavern",
+  'Feywild Froth Inn',
+  'Mystic Brews Bar',
+  'Golden Griffin Alehouse',
+  "Blacksmith's Brew Haven",
+  'Twilight Tumbler Tavern',
+  "Serpent's Sip Inn",
+  'Goblin Goblet Pub',
+  'Celestial Sips Saloon',
+  'Harmony Hops Lodge',
+];
+
+/*
+first_words = [
+  'The',
+  'Moonlit',
+  'Rusty',
+  'Enchanted',
+  'Sapphire',
+  "Dragon's",
+  'Feywild',
+  'Mystic',
+  'Golden',
+  "Blacksmith's",
+  'Twilight',
+  "Serpent's",
+  'Goblin',
+  'Celestial',
+  'Harmony',
+];
+
+second_words = [
+  'Whimsical',
+  'Mug',
+  'Tankard',
+  'Alehouse',
+  'Stein',
+  'Roost',
+  'Froth',
+  'Brews',
+  'Griffin',
+  'Brew',
+  'Tumbler',
+  'Sip',
+  'Goblet',
+  'Sips',
+  'Hops',
+];
+
+third_words = [
+  'Wyrm',
+  'Inn',
+  'Tavern',
+  'Haven',
+  'Pub',
+  'Tavern',
+  'Inn',
+  'Bar',
+  'Alehouse',
+  'Lodge',
+  'Tavern',
+  'Inn',
+  'Pub',
+  'Saloon',
+  'Lodge',
+];
+*/
