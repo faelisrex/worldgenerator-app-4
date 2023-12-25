@@ -15,7 +15,6 @@ const lostItemList = [
 	'spellbook of vanishing ink',
 	"magic talisman that's not doing its job",
 	'ordinary not-a-grimoire book',
-	'cloak that pretends to be invisible',
 	"bag of gems that's really just pebbles",
 	'magic scroll with an illegible spell',
 	'dagger that identifies as a butter knife'

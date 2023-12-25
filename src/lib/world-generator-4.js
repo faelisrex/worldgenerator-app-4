@@ -129,16 +129,16 @@ const genParams = {
 const world = new World(getRandomEl(regionNames));
 const myDict = new Map();
 
-//-----------------------------------------------------------------------Settlements
+//--Settlements-------------------------------------------------------Settlements
 createCities(genParams, world, myDict);
 createTowns(genParams, world, myDict);
 
-//-----------------------------------------------------------------------Buildings
+//--Buildings---------------------------------------------------------Buildings
 createTaverns(world, myDict);
 createFarms(genParams.nFarms.min, genParams.nFarms.max, world, myDict);
 
 createCaves(5, 10, world, myDict);
-//-----------------------------------------------------------------------NPCs
+//--NPCs--------------------------------------------------------------NPCs
 world.buildings.forEach((building) => {
 	const newNpc = new Npc();
 	newNpc.id = `npc${world.countOf.npcs}`;
@@ -160,7 +160,7 @@ world.buildings.forEach((building) => {
 	world.countOf.npcs++;
 	myDict.set(newNpc.id, newNpc);
 });
-//-----------------------------------------------------------------------Quests
+//--Quests------------------------------------------------------------Quests
 createBounties(genParams.questChance.bounty, world, myDict);
 createRetrievalQuest(genParams.questChance.retrieval, world, myDict);
 

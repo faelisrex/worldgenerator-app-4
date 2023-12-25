@@ -13,7 +13,7 @@
 		</ul>
 	</div>
 </div>
-<div class="grid m-5">
+<div class="m-5">
 	<h1 class="h1 text-primary-500">{world.name}</h1>
 	{#each world.settlements as settlement}
 		<div class="card p-2 my-1">
@@ -47,10 +47,12 @@
 					<h3 class="h3">Nearby Locations</h3>
 					<div class="flex">
 						{#each settlement.pois as poi}
-						<div class="m-5">
-							<p>{poi.name}</p>
+						<div class="card m-2 p-2">
+							<header class="card-header">{poi.name}</header>
 							{#if poi.isOccupied}
-								<p>Occupied by {poi.npc.getName()}</p>
+								<section class="p-4 text-sm">
+									Occupied by {poi.npc.getName()}
+								</section>
 							{/if}
 						</div>
 						{/each}
