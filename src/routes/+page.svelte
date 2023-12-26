@@ -16,6 +16,7 @@
 <div class="flex justify-center">
 	<div class="m-5 w-2/3 min-w-96">
 		<h1 class="h1 text-primary-500">{world.name}</h1>
+		
 		{#each world.settlements as settlement}
 			<div class="card p-2 my-1">
 				<h2 class="h4 text-tertiary-500 py-1">{settlement.type} of {settlement.name}</h2>
