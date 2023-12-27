@@ -1,6 +1,6 @@
 <script>
 	import { getRandomEl, getRandomInt } from "../lib/utils/math-functions";
-
+  import { filter } from '@skeletonlabs/skeleton';
 
 	export let world;
 	import QuestBoard from "./QuestBoard.svelte";
@@ -10,10 +10,9 @@
 
 <style>
   .town-card {
-    width: 550px;
+     max-width: 1000px;
   }
   .bldg-card {
-    max-width: 160px;
     border-radius: 0px;
     text-align: center
   }
@@ -24,14 +23,15 @@
 
 
 {#each world.settlements as settlement}
-  <div class="card flex-wrap m-3 pt-3 pb-8 town-card bg-gradient-to-br variant-gradient-primary-secondary">
+<!-- bg-gradient-to-br variant-gradient-primary-secondary -->
+  <div class="card flex-wrap m-3 pt-3 pb-8 town-card variant-glass-primary">
     <h2 class="h2 text-center macondo">{settlement.name}</h2>
     <!-- Services -->
     <div class="flex flex-wrap justify-center p-3">
       {#each settlement.buildings as building}
-        <div class="card bldg-card variant-filled-primary">
+        <div class="card bldg-card variant-filled-primary  max-w-[130px]">
           <header class="">
-            <img src="../{building.img}.jpg" class="bg-black/50 w-full aspect-[20/9]" alt="Post" />
+            <img src="../{building.img}.jpg"  use:filter={'#Apollo'} class="w-full aspect-[20/9]" alt="Post"/>
           </header>
           <p class="text-xs font-bold">{building.type}</p>
           <p class="text-sm leading-4 p-2">{building.name}</p>
@@ -50,7 +50,7 @@
         <div style="min-width: 400px;">
           <span class="badge bg-tertiary-500">🫠</span>
           <span class="flex-auto">
-            <dt id="{npc.id}">{npc.getName()}</dt>
+            <dt id="{npc.id}" class="font-semibold">{npc.getName()}</dt>
             <dd class="text-xs">Works as {npc.job} at {npc.building.name}</dd>
           </span>
         </div>
@@ -63,8 +63,8 @@
     <div class="flex flex-wrap justify-center">
       {#each settlement.pois as poi}
       <div class="grid m-1 w-32 content-start">
-        <img src="../cave{getRandomInt(1,2)}.jpg" alt="post" class="rounded-full w-24 h-24 block mx-auto" />
-        <span class="text-sm text-center h-[40px] pt-1">
+        <img src="../cave{getRandomInt(1,2)}.jpg" alt="post" class="rounded-full w-20 h-20 block mx-auto" />
+        <span class="text-sm text-center h-[40px] pt-1 leading-tight">
           {poi.name}
         </span>
         <!-- NPC -->
