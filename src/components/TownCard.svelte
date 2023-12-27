@@ -2,7 +2,8 @@
 	import { getRandomEl, getRandomInt } from "../lib/utils/math-functions";
 
 
-	import world from "../lib/world-generator-4";
+	export let world;
+	import QuestBoard from "./QuestBoard.svelte";
 
 
 </script>
@@ -20,7 +21,7 @@
 
 
 {#each world.settlements as settlement}
-  <div class="card flex-wrap m-3 pt-3 pb-8 town-card">
+  <div class="card flex-wrap m-3 pt-3 pb-8 town-card bg-gradient-to-br variant-gradient-primary-secondary">
     <h2 class="h2 text-center">{settlement.name}</h2>
     <!-- Services -->
     <div class="flex flex-wrap justify-center p-3">
@@ -35,18 +36,18 @@
       {/each}
     </div>
     <!-- Services -->
-
-
-    
+    <!-- Quest Board -->
+        <QuestBoard {settlement} />
+    <!-- Quest Board -->
     <!-- NPCs -->
-    <h3 class="h3 text-center pt-2">Interesting people</h3>
+    <h4 class="h4 text-center pt-1"  id="{settlement.id}">Interesting people</h4>
     <div class="flex flex-wrap justify-center">
       {#each settlement.npcs as npc}
-      <dl class="list-dl variant-filled-primary card-hover m-1 shadow-xl">
+      <dl class="list-dl variant-filled-primary card-hover m-1 shadow">
         <div style="min-width: 400px;">
           <span class="badge bg-tertiary-500">🫠</span>
           <span class="flex-auto">
-            <dt>{npc.getName()}</dt>
+            <dt id="{npc.id}">{npc.getName()}</dt>
             <dd class="text-xs">Works as {npc.job} at {npc.building.name}</dd>
           </span>
         </div>
@@ -55,10 +56,10 @@
     </div>
     <!-- NPCs -->
     <!-- Points of Interests -->
-    <h3 class="h3 text-center pt-2">Nearby Locations</h3>
+    <h3 class="h4 text-center pt-1">Nearby Locations</h3>
     <div class="flex flex-wrap justify-center">
       {#each settlement.pois as poi}
-      <div class="grid m-3 w-32 content-start">
+      <div class="grid m-1 w-32 content-start">
         <img src="../cave{getRandomInt(1,2)}.jpg" alt="post" class="rounded-full w-24 h-24 block mx-auto" />
         <span class="text-sm text-center h-[40px] pt-1">
           {poi.name}
@@ -66,11 +67,11 @@
         <!-- NPC -->
         <span class="text-[10px] text-center">occupied by</span>
         {#if poi.isOccupied}
-        <div class="bg-tertiary-800 card-hover shadow-xl p-2 min-h-[96px]">
+        <div class="variant-filled-tertiary card-hover shadow p-2 min-h-[96px]">
           <div class="flex flex-wrap justify-center">
-            <span class="badge bg-tertiary-500">💀</span>
+            <span class="badge bg-error-500">💀</span>
             <span class="basis-full"></span>
-            <span class="text-[12px] text-center font-bold leading-4">{poi.npc.getName()}</span>
+            <span class="text-[12px] text-center font-bold leading-4" id="{poi.npc.id}">{poi.npc.getName()}</span>
             <span class="text-[11px] text-center">hiding from authorities</span>
           </div>
         </div>
