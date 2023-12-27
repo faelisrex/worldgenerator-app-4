@@ -8,9 +8,6 @@
 </script>
 
 <style>
-  .handlee {
-    font-family: 'Handlee', cursive;
-  }
   .coming-soon {
     font-family: 'Coming Soon', cursive;
   }
