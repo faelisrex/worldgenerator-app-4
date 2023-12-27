@@ -4,7 +4,9 @@ import { Settlement } from '../../world-generator-4.js';
 
 export function createTowns(genParams, worldObj, myDict) {
 	for (let ii = 0; ii < genParams.nTowns; ii++) {
-		const newTown = new Settlement('Town', getRandomEl(humanSettlementNames));
+		const newTown = new Settlement();
+		newTown.type = 'Town';
+		newTown.name = getRandomEl(humanSettlementNames);
 		newTown.id = `town${worldObj.countOf.settlements}`;
 		newTown.addToWorld(worldObj);
 		worldObj.countOf.settlements++;

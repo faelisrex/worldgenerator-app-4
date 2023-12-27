@@ -49,17 +49,15 @@ function World(name) {
 export function Settlement(type, name) {
 	return {
 		id: '',
-		type,
+		type: 'Town',
 		name,
 		buildings: [],
 		npcs: [],
 		pois: [],
+		quests: [],
 		countOf: 0,
 		addToWorld(worldObj) {
 			worldObj.settlements.push(this);
-		},
-		getSettlementById(id) {
-			this.settlements.find((e) => e.id === id);
 		}
 	};
 }

@@ -4,7 +4,9 @@ import humanSettlementNames from '../../lists/names/human-settlementNames.js';
 
 export function createCities(genParams, worldObj, myDict) {
 	for (let ii = 0; ii < genParams.nCities; ii++) {
-		const newCity = new Settlement('City', getRandomEl(humanSettlementNames));
+		const newCity = new Settlement();
+		newCity.type = 'City';
+		newCity.name = getRandomEl(humanSettlementNames);
 		newCity.id = `city${worldObj.countOf.settlements}`;
 		newCity.addToWorld(worldObj);
 		worldObj.countOf.settlements++;
