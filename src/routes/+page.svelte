@@ -16,7 +16,10 @@
 <div class="">
 	<div class="m-5 grid justify-items-center">
 		<h1 class="h1 ">{world.name}</h1>
-		<TownCard {world}/>
+		<div class="flex flex-wrap justify-center">
+			<TownCard {world}/>
+		</div>
+
 		{#each world.settlements as settlement}
 			<div class="card p-2 my-1">
 				<h2 class="h4 text-tertiary-500 py-1">{settlement.type} of {settlement.name}</h2>
