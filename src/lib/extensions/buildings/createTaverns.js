@@ -1,5 +1,5 @@
 import tavernNames from '../../lists/names/tavernNames';
-import { getRandomEl } from '../../utils/math-functions';
+import { getRandomEl, getRandomInt } from '../../utils/math-functions';
 import { Building } from '../../world-generator-4';
 
 function Tavern() {
@@ -17,6 +17,7 @@ export function createTaverns(worldObj, myDict) {
 		newTavern.name = getRandomEl(tavernNames);
 		newTavern.id = `tavern${worldObj.countOf.buildings}`;
 		newTavern.location = settlement;
+		newTavern.img = `tavern${getRandomInt(1, 2)}`;
 		settlement.buildings.push(newTavern);
 		worldObj.buildings.push(newTavern);
 		worldObj.countOf.buildings++;

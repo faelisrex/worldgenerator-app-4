@@ -31,7 +31,7 @@
       {#each settlement.buildings as building}
         <div class="card bldg-card variant-filled-primary">
           <header class="">
-            <img src="../{building.type}{getRandomInt(1,2)}.jpg" class="bg-black/50 w-full aspect-[20/9]" alt="Post" />
+            <img src="../{building.img}.jpg" class="bg-black/50 w-full aspect-[20/9]" alt="Post" />
           </header>
           <p class="text-xs font-bold">{building.type}</p>
           <p class="text-sm leading-4 p-2">{building.name}</p>

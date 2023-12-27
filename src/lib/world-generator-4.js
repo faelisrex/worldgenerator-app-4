@@ -68,6 +68,7 @@ export function Building() {
 	return {
 		id: '',
 		name: '',
+		img: 'town1-sample',
 		isPoi: false,
 		location: {},
 		npcs: []

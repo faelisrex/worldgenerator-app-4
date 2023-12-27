@@ -1,5 +1,5 @@
 import { Building } from '../../world-generator-4.js';
-import { getThreeRandTable } from '../../utils/math-functions.js';
+import { getRandomInt, getThreeRandTable } from '../../utils/math-functions.js';
 
 const firstFarm = [
 	'Meadow',
@@ -81,6 +81,7 @@ export function createFarms(world, dict) {
 			newFarm.id = `farm${world.countOf.buildings}`;
 			newFarm.name = getThreeRandTable(firstFarm, secondFarm, thirdFarm);
 			newFarm.location = settlement;
+			newFarm.img = `farm${getRandomInt(1, 2)}`;
 			settlement.buildings.push(newFarm);
 			world.buildings.push(newFarm);
 			world.countOf.buildings++;
