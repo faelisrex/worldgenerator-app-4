@@ -1,14 +1,23 @@
 <script>
 	import { bountyDesc } from "../lib/extensions/quests/bountyQuests";
-import { getRandomEl } from "../lib/utils/math-functions";
+  import { getRandomEl } from "../lib/utils/math-functions";
 
 
  export let settlement;
 
 </script>
 
+<style>
+  .handlee {
+    font-family: 'Handlee', cursive;
+  }
+  .coming-soon {
+    font-family: 'Coming Soon', cursive;
+  }
+</style>
+
 <h4 class="h4 text-center">📜 Quest Board</h4>
-<div class="flex flex-wrap justify-center px-5 text-sm">
+<div class="flex flex-wrap justify-center px-5 text-sm font-bold coming-soon">
   {#each settlement.quests as quest}
     <a class="card card-hover variant-filled-primary m-1 p-2 max-w-[150px]" href='#{quest.owner.location.id}'>
 

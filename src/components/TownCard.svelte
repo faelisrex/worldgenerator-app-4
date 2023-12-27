@@ -17,12 +17,15 @@
     border-radius: 0px;
     text-align: center
   }
+	.macondo {
+		font-family: 'Macondo', cursive;
+	}
 </style>
 
 
 {#each world.settlements as settlement}
   <div class="card flex-wrap m-3 pt-3 pb-8 town-card bg-gradient-to-br variant-gradient-primary-secondary">
-    <h2 class="h2 text-center">{settlement.name}</h2>
+    <h2 class="h2 text-center macondo">{settlement.name}</h2>
     <!-- Services -->
     <div class="flex flex-wrap justify-center p-3">
       {#each settlement.buildings as building}
