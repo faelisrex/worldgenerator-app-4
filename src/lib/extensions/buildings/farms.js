@@ -16,12 +16,12 @@ const firstFarm = [
 	'Daisy',
 	'Peaceful',
 	'Tranquil',
-	'Cottonwood'
+	'Cottonwood',
+	'River'
 ];
 const secondFarm = [
 	'Haven',
 	'Grove',
-	'Fields',
 	'Harvest',
 	'Winds',
 	'Grove',

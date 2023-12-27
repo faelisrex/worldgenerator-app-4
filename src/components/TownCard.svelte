@@ -15,7 +15,7 @@
 
 
 {#each world.settlements as settlement}
-  <div style="width: 650px" class="card flex-wrap m-3 variant-glass-tertiary">
+  <div style="width: 650px" class="card flex-wrap m-3 variant-glass-tertiary pt-3 pb-8">
     <h2 class="h2 text-center p-2">{settlement.name}</h2>
     <!-- Services -->
     <div class="flex flex-wrap justify-center p-3">
@@ -24,8 +24,10 @@
           <header class="">
             <img src="../town1-sample.jpg" class="bg-black/50 w-full aspect-[21/9]" alt="Post" />
           </header>
-          <section class="p-1 py-1">
-            {building.name}
+          <section class="p-1 py-1 text-center">
+            <span class="text-sm">
+              {building.name}
+            </span>  
           </section>
         </div>
       {/each}
@@ -35,7 +37,7 @@
       {#each settlement.npcs as npc}
       <dl class="list-dl variant-filled-primary m-1 shadow-md">
         <div style="min-width: 400px;">
-          <span class="badge bg-primary-500">💀</span>
+          <span class="badge bg-tertiary-500">💀</span>
           <span class="flex-auto">
             <dt>{npc.getName()}</dt>
             <dd class="text-xs">Works as {npc.job} at {npc.building.name}</dd>
