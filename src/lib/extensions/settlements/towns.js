@@ -8,7 +8,7 @@ export function createTowns(genParams, worldObj, myDict) {
 		newTown.type = 'Town';
 		newTown.name = getRandomEl(humanSettlementNames);
 		newTown.id = `town${worldObj.countOf.settlements}`;
-		newTown.nResources = 2;
+		newTown.nResources = 3;
 
 		newTown.addToWorld(worldObj);
 		worldObj.countOf.settlements++;
