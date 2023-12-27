@@ -46,15 +46,15 @@
     <h4 class="h4 text-center pt-1"  id="{settlement.id}">Interesting people</h4>
     <div class="flex flex-wrap justify-center">
       {#each settlement.npcs as npc}
-      <dl class="list-dl variant-filled-primary card-hover m-1 shadow">
-        <div style="min-width: 400px;">
-          <span class="badge bg-tertiary-500">🫠</span>
-          <span class="flex-auto">
-            <dt id="{npc.id}" class="font-semibold">{npc.getName()}</dt>
-            <dd class="text-xs">Works as {npc.job} at {npc.building.name}</dd>
-          </span>
+      <div class="variant-filled-primary card-hover shadow w-[300px] p-1 cursor-pointer">
+        <div class="flex">
+          <img src="../randomPerson1.jpg" alt="" class="rounded-full w-12 h-12" />
+          <div class="flex flex-col pl-1">
+            <span id="{npc.id}" class="font-semibold">{npc.getName()}</span>
+            <span class="text-xs tracking-tight line-clamp-1">Works as {npc.job} at {npc.building.name}</span>
+          </div>
         </div>
-      </dl>
+      </div>
       {/each}
     </div>
     <!-- NPCs -->
@@ -70,7 +70,7 @@
         <!-- NPC -->
         <span class="text-[10px] text-center">occupied by</span>
         {#if poi.isOccupied}
-        <div class="variant-filled-tertiary card-hover shadow p-2 min-h-[96px]">
+        <div class="variant-filled-tertiary card-hover shadow p-2 min-h-[96px] cursor-pointer">
           <div class="flex flex-wrap justify-center">
             <span class="badge bg-error-500">💀</span>
             <span class="basis-full"></span>
