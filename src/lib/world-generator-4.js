@@ -4,6 +4,7 @@ import { createCaves } from './extensions/points-of-interests/caves.js';
 import { createBounties } from './extensions/quests/bountyQuests.js';
 import { createRetrievalQuest } from './extensions/quests/retrievalQuests.js';
 import { createCities } from './extensions/settlements/cities.js';
+import { selectResources } from './extensions/settlements/resources.js';
 import { createTowns } from './extensions/settlements/towns.js';
 import humanFirstNames from './lists/names/human-firstNames.js';
 import humanLastNames from './lists/names/human-lastNames.js';
@@ -21,6 +22,7 @@ function World(name) {
 		quests: [],
 		items: [],
 		pois: [],
+		resources: ['farmland'],
 		countOf: {
 			settlements: 0,
 			npcs: 0,
@@ -51,11 +53,12 @@ export function Settlement() {
 		id: '',
 		type: 'Town',
 		name: 'town-unnamed',
+		resources: [],
 		buildings: [],
 		npcs: [],
 		pois: [],
 		quests: [],
-		countOf: 0,
+		nResources: 1,
 		addToWorld(worldObj) {
 			worldObj.settlements.push(this);
 		}
@@ -117,7 +120,6 @@ export function Item() {
 const genParams = {
 	nCities: 1,
 	nTowns: 3,
-	nFarms: { min: 1, max: 3 },
 	questChance: {
 		bounty: 1 / 3,
 		retrieval: 1 / 3
@@ -131,9 +133,12 @@ const myDict = new Map();
 createCities(genParams, world, myDict);
 createTowns(genParams, world, myDict);
 
+//--Resources---------------------------------------------------------Resources
+selectResources(world);
+
 //--Buildings---------------------------------------------------------Buildings
 createTaverns(world, myDict);
-createFarms(genParams.nFarms.min, genParams.nFarms.max, world, myDict);
+createFarms(world, myDict);
 
 createCaves(5, 10, world, myDict);
 //--NPCs--------------------------------------------------------------NPCs

@@ -8,6 +8,8 @@ export function createCities(genParams, worldObj, myDict) {
 		newCity.type = 'City';
 		newCity.name = getRandomEl(humanSettlementNames);
 		newCity.id = `city${worldObj.countOf.settlements}`;
+		newCity.nResources = 5;
+
 		newCity.addToWorld(worldObj);
 		worldObj.countOf.settlements++;
 		myDict.set(newCity.id, newCity);

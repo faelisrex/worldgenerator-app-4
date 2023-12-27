@@ -1,5 +1,5 @@
 import { Building } from '../../world-generator-4.js';
-import { getThreeRandTable, getRandomInt } from '../../utils/math-functions.js';
+import { getThreeRandTable } from '../../utils/math-functions.js';
 
 const firstFarm = [
 	'Meadow',
@@ -72,9 +72,11 @@ function Farm() {
 	});
 }
 
-export function createFarms(min, max, world, dict) {
+export function createFarms(world, dict) {
 	world.settlements.forEach((settlement) => {
-		for (let ii = 0; ii < getRandomInt(min, max); ii++) {
+		const nFarms = settlement.resources.filter((el) => el === 'farmland').length;
+
+		for (let ii = 0; ii < nFarms; ii++) {
 			const newFarm = new Farm();
 			newFarm.id = `farm${world.countOf.buildings}`;
 			newFarm.name = getThreeRandTable(firstFarm, secondFarm, thirdFarm);
