@@ -2,7 +2,6 @@ import { Building } from '../../world-generator-4.js';
 import { getThreeRandTable, getRandomInt } from '../../utils/math-functions.js';
 
 const firstFarm = [
-	'Harvest',
 	'Meadow',
 	'Sunrise',
 	'Golden',
@@ -26,7 +25,6 @@ const secondFarm = [
 	'Winds',
 	'Grove',
 	'Acres',
-	'Orchard',
 	'Pastures',
 	'Roots',
 	'Meadows',
