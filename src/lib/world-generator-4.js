@@ -46,11 +46,11 @@ function World(name) {
 		}
 	};
 }
-export function Settlement(type, name) {
+export function Settlement() {
 	return {
 		id: '',
 		type: 'Town',
-		name,
+		name: 'town-unnamed',
 		buildings: [],
 		npcs: [],
 		pois: [],
