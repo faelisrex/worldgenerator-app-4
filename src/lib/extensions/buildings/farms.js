@@ -53,21 +53,20 @@ function Farm() {
 	return Object.assign({}, building, {
 		type: 'Farm',
 		jobs: [
-			'a spud digger',
-			'a chicken rancher',
-			'a crop sower',
-			'a herb gatherer',
-			'an animal husbandman',
-			'a milkmaid',
-			'a beekeeper',
-			'a shepherd',
-			'a plowman',
-			'an orchard tender',
-			'a grain miller',
-			'a hay baler',
-			'a vegetable harvester',
-			'a vintner',
-			'an egg collector'
+			'spud digger',
+			'chicken rancher',
+			'crop sower',
+			'herb gatherer',
+			'livestock breeder',
+			'milkmaid',
+			'beekeeper',
+			'shepherd',
+			'plowman',
+			'orchard tender',
+			'grain miller',
+			'hay baler',
+			'vegetable harvester',
+			'egg collector'
 		]
 	});
 }

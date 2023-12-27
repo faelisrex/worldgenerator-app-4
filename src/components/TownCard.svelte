@@ -5,6 +5,7 @@
 	export let world;
 	import QuestBoard from "./QuestBoard.svelte";
 	import InterestingPeopleCorner from "./InterestingPeopleCorner.svelte";
+	import NpcQuestList from "./NpcQuestList.svelte";
 
 
 </script>
@@ -60,6 +61,9 @@
             <span class="basis-full"></span>
             <span class="text-[12px] text-center font-bold leading-4" id="{poi.npc.id}">{poi.npc.getName()}</span>
             <span class="text-[11px] text-center">hiding from authorities</span>
+          </div>
+          <div>
+            <!-- <NpcQuestList {poi} /> -->
           </div>
         </div>
         {:else}
