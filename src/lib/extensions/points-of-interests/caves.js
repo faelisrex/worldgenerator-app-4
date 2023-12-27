@@ -61,7 +61,7 @@ function Caveman() {
 function Cave() {
 	const building = new PointOfInterest();
 	return Object.assign({}, building, {
-		jobs: ['caveman']
+		jobs: ['outlaw']
 	});
 }
 
@@ -82,16 +82,18 @@ export function createCaves(min, max, worldObj, dict) {
 		if (executeWithProbability(0.5)) {
 			const caveman = new Caveman();
 			caveman.id = `npc${worldObj.countOf.npcs}`;
-			caveman.type = 'Caveman';
+			caveman.type = 'Outsider';
 			caveman.firstName = getRandomEl(sinisterFirstNames);
 			caveman.lastName = getRandomEl(sinisterLastNames);
 
 			caveman.building = newCave;
-			caveman.job = 'cave man';
+			caveman.job = getRandomEl(newCave.jobs);
 			caveman.location = location;
 
 			newCave.npc = caveman;
 			newCave.isOccupied = true;
+
+			location.npcs.push(caveman);
 			caveman.addToWorld(worldObj);
 			worldObj.countOf.npcs++;
 			dict.set(caveman.id, caveman);
