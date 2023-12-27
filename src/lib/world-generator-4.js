@@ -144,6 +144,11 @@ createFarms(world, myDict);
 createCaves(5, 10, world, myDict);
 //--NPCs--------------------------------------------------------------NPCs
 world.buildings.forEach((building) => {
+	if (building.npcs.length > 0) {
+		console.log(building.npcs);
+		return;
+	}
+
 	const newNpc = new Npc();
 	newNpc.id = `npc${world.countOf.npcs}`;
 	newNpc.type = 'Townfolk';
