@@ -118,9 +118,7 @@
 	"files.exclude": {
 		".*": true,
 		".svelte-kit/": true,
-		"*config*": true,
 		"node_modules/": true,
-		"package*": true,
-		"src/app.*": true
+		"package*": true
 	}
 }
