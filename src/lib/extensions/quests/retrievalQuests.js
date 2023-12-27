@@ -61,6 +61,7 @@ export function createRetrievalQuest(probability, worldObj, dict) {
 
 			newQuest.targetItem = newItem;
 
+			npc.location.quests.push(newQuest);
 			npc.quests.push(newQuest);
 			worldObj.quests.push(newQuest);
 			dict.set(newQuest.id, newQuest);

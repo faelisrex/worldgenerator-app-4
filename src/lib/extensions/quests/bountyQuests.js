@@ -64,6 +64,8 @@ export function createBounties(probability, worldObj, dict) {
 
 			const listNpcsExceptSelf = worldObj.npcs.filter((n) => n.id != npc.id);
 			newQuest.targetNpc = getRandomEl(listNpcsExceptSelf);
+
+			npc.location.quests.push(newQuest);
 			newQuest.addToWorld(worldObj);
 			worldObj.countOf.quests++;
 			dict.set(newQuest.id, newQuest);
