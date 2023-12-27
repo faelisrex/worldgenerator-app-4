@@ -122,8 +122,8 @@ const genParams = {
 	nCities: 1,
 	nTowns: 3,
 	questChance: {
-		bounty: 1 / 3,
-		retrieval: 1 / 3
+		bounty: 0.28,
+		retrieval: 0.28
 	}
 };
 
