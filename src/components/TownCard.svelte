@@ -35,7 +35,7 @@
             <img src="../{building.img}.jpg"  use:filter={'#Apollo'} class="w-full aspect-[20/9]" alt="Post"/>
           </header>
           <p class="text-xs font-bold">{building.type}</p>
-          <p class="text-sm leading-4 p-2">{building.name}</p>
+          <p class="text-sm leading-4 tracking-tight p-1">{building.name}</p>
         </div>
       {/each}
     </div>
