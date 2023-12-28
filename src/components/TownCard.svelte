@@ -6,6 +6,7 @@
 	import QuestBoard from "./QuestBoard.svelte";
 	import InterestingPeopleCorner from "./InterestingPeopleCorner.svelte";
 	import NpcQuestList from "./NpcQuestList.svelte";
+	import InterestingPeopleCorner2 from "./InterestingPeopleCorner2.svelte";
 
 
 </script>
@@ -27,7 +28,7 @@
 {#each world.settlements as settlement}
 <!-- bg-gradient-to-br variant-gradient-primary-secondary -->
   <div class="card flex-wrap m-3 pt-3 pb-8 town-card variant-glass-primary">
-    <h2 class="h2 text-center macondo">{settlement.name}</h2>
+    <h2 class="h2 text-center macondo" id='{settlement.id}'>{settlement.name}</h2>
     <!-- Services -->
     <div class="flex flex-wrap justify-center p-3">
       {#each settlement.buildings as building}
@@ -42,7 +43,7 @@
     </div>
     <!-- Services -->
     <QuestBoard {settlement} />
-    <InterestingPeopleCorner {settlement} />
+    <InterestingPeopleCorner2 {settlement} />
     <!-- Points of Interests -->
     <h3 class="h4 text-center pt-1">Nearby Locations</h3>
     <div class="flex flex-wrap justify-center">
@@ -55,17 +56,11 @@
         <!-- NPC -->
         <span class="text-[10px] text-center">occupied by</span>
         {#if poi.isOccupied}
-        <div class="variant-filled-tertiary card-hover shadow p-2 min-h-[96px] cursor-pointer">
-          <div class="flex flex-wrap justify-center">
-            <span class="badge bg-error-500">💀</span>
-            <span class="basis-full"></span>
-            <span class="text-[12px] text-center font-bold leading-4" id="{poi.npc.id}">{poi.npc.getName()}</span>
-            <span class="text-[11px] text-center">hiding from authorities</span>
-          </div>
-          <div>
+        <span class="text-[12px] text-center font-bold" id="{poi.npc.id}">{poi.npc.getName()}</span>
+        
             <!-- <NpcQuestList {poi} /> -->
-          </div>
-        </div>
+          
+        
         {:else}
           <p class="text-[12px] text-center font-bold">{getRandomEl(['a Big Bear', 'a Wraith', 'a Lion'])}</p>
         {/if}
