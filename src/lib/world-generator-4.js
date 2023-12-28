@@ -1,5 +1,6 @@
 import { createTaverns } from './extensions/buildings/createTaverns.js';
 import { createFarms } from './extensions/buildings/farms.js';
+import { createSmithies } from './extensions/buildings/smithy.js';
 import { createCaves } from './extensions/points-of-interests/caves.js';
 import { createBounties } from './extensions/quests/bountyQuests.js';
 import { createRetrievalQuest } from './extensions/quests/retrievalQuests.js';
@@ -22,7 +23,7 @@ function World(name) {
 		quests: [],
 		items: [],
 		pois: [],
-		resources: ['farmland'],
+		resources: ['farmland', 'minerals'],
 		countOf: {
 			settlements: 0,
 			npcs: 0,
@@ -140,6 +141,7 @@ selectResources(world);
 //--Buildings---------------------------------------------------------Buildings
 createTaverns(world, myDict);
 createFarms(world, myDict);
+createSmithies(world, myDict);
 
 createCaves(5, 10, world, myDict);
 //--NPCs--------------------------------------------------------------NPCs
