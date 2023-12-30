@@ -19,11 +19,9 @@
   <div class="flex flex-wrap justify-center">
     {#each settlement.buildings as building}
     <div class="flex variant-filled-primary w-[300px] text-sm items-center">
-      <div class="{building.type} p-1 min-w-[40px] min-h-[40px]"><img class="w-6 block mx-auto" src="/icons/{building.type}Icon.svg" alt=""></div>
-      <div>
-        <span class="font-semibold">({building.type})</span>
-        {building.name}
-      </div>
+      <div class="{building.type} w-[40px] h-[40px]"><img class="w-full h-full" src="/{building.img}.jpg" alt=""></div>
+      <div class="pl-1 font-semibold">({building.type})</div>
+      <div class="max-w-[200px] pl-1">{building.name}</div>
     </div>
     {/each}
   </div>
