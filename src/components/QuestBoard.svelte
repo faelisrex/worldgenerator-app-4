@@ -13,7 +13,7 @@
   }
 </style>
 
-<h4 class="h4 text-center">📜 Quest Board/Rumors</h4>
+<h4 class="h4 text-center py-1">📜 Quest Board/Rumors</h4>
 <div class="flex flex-wrap justify-center px-5 text-sm font-semibold coming-soon">
   {#each settlement.quests as quest}
     <a class="card card-hover variant-filled-primary m-1 p-2 max-w-[150px] leading-4" href='#{quest.owner.location.id}'>

@@ -1,11 +1,11 @@
 <script>
-	import { capitalize } from "../lib/utils/math-functions";
-	import NpcQuestList from "./NpcQuestList.svelte";
+	import { capitalize } from "$lib/utils/math-functions";
+	import NpcQuestList from "../NpcQuestList.svelte";
 
   export let settlement;
 </script>
 
-<h4 class="h4 text-center pt-1"  id="{settlement.id}">Interesting people</h4>
+<h4 class="h4 text-center py-1"  id="{settlement.id}">Interesting people</h4>
 <div class="flex justify-center ">
   
   <div class="flex-col justify-center variant-filled-primary rounded p-5 max-w-[625px]">

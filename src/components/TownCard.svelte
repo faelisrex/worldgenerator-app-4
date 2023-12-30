@@ -1,12 +1,10 @@
 <script>
 	import { getRandomEl, getRandomInt } from "../lib/utils/math-functions";
-  import { filter } from '@skeletonlabs/skeleton';
 
 	export let world;
 	import QuestBoard from "./QuestBoard.svelte";
-	import InterestingPeopleCorner from "./InterestingPeopleCorner.svelte";
-	import NpcQuestList from "./NpcQuestList.svelte";
-	import InterestingPeopleCorner2 from "./InterestingPeopleCorner2.svelte";
+	import InterestingPeopleCorner2 from "./towncard-components/InterestingPeopleCorner2.svelte";
+	import TownServices from "./towncard-components/TownServices.svelte";
 
 
 </script>
@@ -14,10 +12,6 @@
 <style>
   .town-card {
      max-width: 1000px;
-  }
-  .bldg-card {
-    border-radius: 0px;
-    text-align: center
   }
 	.macondo {
 		font-family: 'Macondo', cursive;
@@ -29,19 +23,7 @@
 <!-- bg-gradient-to-br variant-gradient-primary-secondary -->
   <div class="card flex-wrap m-3 pt-3 pb-8 town-card variant-glass-primary">
     <h2 class="h2 text-center macondo" id='{settlement.id}'>{settlement.name}</h2>
-    <!-- Services -->
-    <div class="flex flex-wrap justify-center p-3">
-      {#each settlement.buildings as building}
-        <div class="card bldg-card variant-filled-primary  max-w-[130px]">
-          <header class="">
-            <img src="../{building.img}.jpg"  use:filter={'#Apollo'} class="w-full aspect-[20/9]" alt="Post"/>
-          </header>
-          <p class="text-xs font-bold">{building.type}</p>
-          <p class="text-sm leading-4 tracking-tight p-1">{building.name}</p>
-        </div>
-      {/each}
-    </div>
-    <!-- Services -->
+    <TownServices {settlement} />
     <QuestBoard {settlement} />
     <InterestingPeopleCorner2 {settlement} />
     <!-- Points of Interests -->
