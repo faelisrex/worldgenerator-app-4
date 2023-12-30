@@ -13,10 +13,6 @@
   .town-card {
      max-width: 1000px;
   }
-  .bldg-card {
-    border-radius: 0px;
-    text-align: center
-  }
 	.macondo {
 		font-family: 'Macondo', cursive;
 	}

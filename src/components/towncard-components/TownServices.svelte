@@ -15,7 +15,7 @@
 </style>
 
 
-<div class="flex justify-center">
+<div class="flex justify-center py-1">
   <div class="flex flex-wrap justify-center">
     {#each settlement.buildings as building}
     <div class="flex variant-filled-primary w-[300px] text-sm items-center">
