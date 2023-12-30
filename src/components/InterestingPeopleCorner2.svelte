@@ -3,13 +3,6 @@
 	import NpcQuestList from "./NpcQuestList.svelte";
 
   export let settlement;
-
-  function describeLawValue(value){
-    if (value < 0) {
-      return "they are a bad man"
-    }
-    else return "they are good guy"
-  }
 </script>
 
 <h4 class="h4 text-center pt-1"  id="{settlement.id}">Interesting people</h4>
@@ -23,7 +16,16 @@
         </div>
         <div class="text-sm pl-2">
           <p>{capitalize(npc.job)} at {npc.building.name}</p>
-          <p>{describeLawValue(npc.values.law)}</p>
+          <p>{npc.values.law.description}</p>
+          <p>{npc.values.justice.description}</p>
+          <p>{npc.values.power.description}</p>
+          <p>{npc.values.cunning.description}</p>
+          <p>{npc.values.fairness.description}</p>
+          <p>{npc.values.knowledge.description}</p>
+          <p>{npc.values.compassion.description}</p>
+          <p>{npc.values.riskTaking.description}</p>
+          <p>{npc.values.loyalty.description}</p>
+          <p>{npc.values.independence.description }</p>
           <p><NpcQuestList {npc} /></p>
         </div>
       </div>

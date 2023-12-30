@@ -125,12 +125,12 @@ function describePowerValue(npc) {
 			npc.values.power.isPositive = true;
 			break;
 		case test >= 26 && test <= 40:
-			powerDescription = 'Ambitious and desires influence over others for personal goals';
+			powerDescription =
+				'Ambitious, desires influence and power over others to achieve personal goals';
 			npc.values.power.isPositive = true;
 			break;
 		case test >= 11 && test <= 25:
-			powerDescription =
-				'Values personal achievement, influence, and power over others without extreme ambition';
+			powerDescription = 'Values personal achievement and influence over others';
 			npc.values.power.isPositive = true;
 			break;
 		case test >= -10 && test <= 10:
@@ -172,11 +172,13 @@ function describeCunningValue(npc) {
 			npc.values.cunning.isPositive = true;
 			break;
 		case test >= 11 && test <= 25:
-			cunningDescription = 'Adaptable and capable of strategic thinking while manipulating others';
+			cunningDescription =
+				'Adaptable and capable of strategic thinking while manipulating others to get what they want';
 			npc.values.cunning.isPositive = true;
 			break;
 		case test >= -10 && test <= 10:
-			cunningDescription = 'Takes a straightforward approach, avoids cunning or manipulation';
+			cunningDescription =
+				'Takes a straightforward approach to getting what they want, avoids cunning or manipulation';
 			break;
 		case test >= -25 && test <= -11:
 			cunningDescription = 'Views being cunning unfavorably, prefers honesty and transparency';
@@ -215,7 +217,8 @@ function describeFairnessValue(npc) {
 			npc.values.fairness.isPositive = true;
 			break;
 		case test >= -10 && test <= 10:
-			fairnessDescription = 'Takes a pragmatic approach, considers fairness in specific situations';
+			fairnessDescription =
+				'Takes a pragmatic approach to fairness, considers it in specific situations';
 			break;
 		case test >= -25 && test <= -11:
 			fairnessDescription =
@@ -340,7 +343,7 @@ function describeRiskTakingValue(npc) {
 			npc.values.riskTaking.isPositive = true;
 			break;
 		case test >= -10 && test <= 10:
-			riskTakingDescription = 'Takes a balanced approach to risk, avoids unnecessary danger';
+			riskTakingDescription = 'Takes a balanced approach to taking risk, avoids unnecessary danger';
 			break;
 		case test >= -25 && test <= -11:
 			riskTakingDescription = 'Views risk unfavorably, prefers stability and predictability';
