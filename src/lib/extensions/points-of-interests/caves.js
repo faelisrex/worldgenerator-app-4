@@ -90,21 +90,11 @@ export function createCaves(min, max, worldObj, dict) {
 			caveman.job = getRandomEl(newCave.jobs);
 			caveman.location = location;
 
-			caveman = {
-				...caveman,
-				values: {
-					law: -20,
-					justice: -20,
-					power: 30,
-					cunning: 20,
-					fairness: 0,
-					knowledge: 0,
-					compassion: 0,
-					riskTaking: 0,
-					loyalty: 0,
-					independence: 20
-				}
-			};
+			caveman.values.law.value = -25;
+			caveman.values.justice.value = -20;
+			caveman.values.power.value = 30;
+			caveman.values.cunning.value = 20;
+			caveman.values.independence.value = 20;
 
 			newCave.npc = caveman;
 			newCave.isOccupied = true;

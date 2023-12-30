@@ -87,16 +87,16 @@ export function Npc() {
 		items: [],
 		quests: [],
 		values: {
-			law: 0,
-			justice: 0,
-			power: 0,
-			cunning: 0,
-			fairness: 0,
-			knowledge: 0,
-			compassion: 0,
-			riskTaking: 0,
-			loyalty: 0,
-			independence: 0
+			law: { value: 0, isPositive: false, isNegative: false, description: '' },
+			justice: { value: 0, isPositive: false, isNegative: false, description: '' },
+			power: { value: 0, isPositive: false, isNegative: false, description: '' },
+			cunning: { value: 0, isPositive: false, isNegative: false, description: '' },
+			fairness: { value: 0, isPositive: false, isNegative: false, description: '' },
+			knowledge: { value: 0, isPositive: false, isNegative: false, description: '' },
+			compassion: { value: 0, isPositive: false, isNegative: false, description: '' },
+			riskTaking: { value: 0, isPositive: false, isNegative: false, description: '' },
+			loyalty: { value: 0, isPositive: false, isNegative: false, description: '' },
+			independence: { value: 0, isPositive: false, isNegative: false, description: '' }
 		},
 		addToWorld(worldObj) {
 			worldObj.npcs.push(this);
