@@ -271,5 +271,6 @@ createRetrievalQuest(genParams.questChance.retrieval, world, myDict);
 
 console.log(world);
 console.log(myDict);
+console.table(world.npcs, ['id', 'firstName', 'job', 'alignment', 'type']);
 
 export default world;
