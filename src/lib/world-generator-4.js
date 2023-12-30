@@ -86,18 +86,97 @@ export function Npc() {
 		location: {},
 		items: [],
 		quests: [],
-		values: {
-			law: { value: 0, isPositive: false, isNegative: false, description: '' },
-			justice: { value: 0, isPositive: false, isNegative: false, description: '' },
-			power: { value: 0, isPositive: false, isNegative: false, description: '' },
-			cunning: { value: 0, isPositive: false, isNegative: false, description: '' },
-			fairness: { value: 0, isPositive: false, isNegative: false, description: '' },
-			knowledge: { value: 0, isPositive: false, isNegative: false, description: '' },
-			compassion: { value: 0, isPositive: false, isNegative: false, description: '' },
-			riskTaking: { value: 0, isPositive: false, isNegative: false, description: '' },
-			loyalty: { value: 0, isPositive: false, isNegative: false, description: '' },
-			independence: { value: 0, isPositive: false, isNegative: false, description: '' }
-		},
+		alignment: 'N',
+		values: [
+			{
+				name: 'law',
+				value: 0,
+				valModifier: 0,
+				isPositive: false,
+				isNegative: false,
+				description: ''
+			},
+			{
+				name: 'justice',
+				value: 0,
+				valModifier: 0,
+				isPositive: false,
+				isNegative: false,
+				description: ''
+			},
+			{
+				name: 'power',
+				value: 0,
+				valModifier: 0,
+				isPositive: false,
+				isNegative: false,
+				description: ''
+			},
+			{
+				name: 'greed',
+				value: 0,
+				valModifier: 0,
+				isPositive: false,
+				isNegative: false,
+				description: ''
+			},
+			{
+				name: 'compassion',
+				value: 0,
+				valModifier: 0,
+				isPositive: false,
+				isNegative: false,
+				description: ''
+			},
+			{
+				name: 'fairness',
+				value: 0,
+				valModifier: 0,
+				isPositive: false,
+				isNegative: false,
+				description: ''
+			},
+			{
+				name: 'knowledge',
+				value: 0,
+				valModifier: 0,
+				isPositive: false,
+				isNegative: false,
+				description: ''
+			},
+			{
+				name: 'risk taking',
+				value: 0,
+				valModifier: 0,
+				isPositive: false,
+				isNegative: false,
+				description: ''
+			},
+			{
+				name: 'loyalty',
+				value: 0,
+				valModifier: 0,
+				isPositive: false,
+				isNegative: false,
+				description: ''
+			},
+			{
+				name: 'cunning',
+				value: 0,
+				valModifier: 0,
+				isPositive: false,
+				isNegative: false,
+				description: ''
+			},
+			{
+				name: 'independence',
+				value: 0,
+				valModifier: 0,
+				isPositive: false,
+				isNegative: false,
+				description: ''
+			}
+		],
 		addToWorld(worldObj) {
 			worldObj.npcs.push(this);
 		},
@@ -192,5 +271,6 @@ createRetrievalQuest(genParams.questChance.retrieval, world, myDict);
 
 console.log(world);
 console.log(myDict);
+console.table(world.npcs, ['id', 'firstName', 'job', 'alignment', 'type']);
 
 export default world;
