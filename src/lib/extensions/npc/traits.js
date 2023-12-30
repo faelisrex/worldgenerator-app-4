@@ -70,8 +70,6 @@ export function assignValues(worldObj) {
 		let greed = npc.values.find((value) => value.name === 'greed');
 		greed.value = Math.round(randn_bm(-50, 50, 1) + greed.valModifier);
 		greed.description = describeGreedValue(greed);
-
-		console.table(npc.values);
 	});
 }
 
