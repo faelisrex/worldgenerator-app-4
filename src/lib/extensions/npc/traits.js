@@ -45,7 +45,7 @@ export function assignValues(worldObj) {
 		compassion.value = Math.round(randn_bm(-50, 50, 1) + compassion.value);
 		compassion.description = describeCompassionValue(compassion);
 
-		let riskTaking = npc.values.find((value) => value.name === 'riskTaking');
+		let riskTaking = npc.values.find((value) => value.name === 'risk taking');
 		riskTaking.value = Math.round(randn_bm(-50, 50, 1) + riskTaking.value);
 		riskTaking.description = describeRiskTakingValue(riskTaking);
 
@@ -56,6 +56,10 @@ export function assignValues(worldObj) {
 		let independence = npc.values.find((value) => value.name === 'independence');
 		independence.value = Math.round(randn_bm(-50, 50, 1) + independence.value);
 		independence.description = describeIndependenceValue(independence);
+
+		let greed = npc.values.find((value) => value.name === 'greed');
+		greed.value = Math.round(randn_bm(-50, 50, 1) + greed.value);
+		greed.description = describeGreedValue(greed);
 	});
 }
 
@@ -65,12 +69,12 @@ function describeLawValue(law) {
 	switch (true) {
 		case test > 40:
 			lawDescription =
-				'Adheres strictly to the letter of the law, values order and authority above all else';
+				'Adheres strictly to the letter of the law, respects and values order and authority above all else';
 			law.isPositive = true;
 			break;
 		case test >= 26 && test <= 40:
 			lawDescription =
-				'Respects and upholds laws but may show flexibility in certain situations for the greater good';
+				'Respects and upholds laws, may show some flexibility in certain situations if compassionate';
 			law.isPositive = true;
 			break;
 		case test >= 11 && test <= 25:
@@ -83,7 +87,7 @@ function describeLawValue(law) {
 			break;
 		case test >= -25 && test <= -11:
 			lawDescription =
-				'Views laws skeptically and may occasionally break them if they conflict with personal values';
+				'Views laws skeptically and may occasionally break them if they conflict with other personal values';
 			law.isNegative = true;
 			break;
 		case test >= -40 && test <= -26:
@@ -129,7 +133,8 @@ function describeJusticeValue(justice) {
 			justice.isNegative = true;
 			break;
 		case test >= -40 && test <= -26:
-			justiceDescription = 'Views the pursuit of justice unfavorably, believs it can lead to chaos';
+			justiceDescription =
+				'Views the pursuit of justice unfavorably, believes it can lead to chaos';
 			justice.isNegative = true;
 			break;
 		case test < -40:
@@ -150,16 +155,16 @@ function describePowerValue(power) {
 	switch (true) {
 		case test > 40:
 			powerDescription = 'Seeks power over others as the ultimate goal in life';
-			power.isPositive = true;
+			power.isNegative = true;
 			break;
 		case test >= 26 && test <= 40:
 			powerDescription =
 				'Ambitious, desires influence and power over others to achieve personal goals';
-			power.isPositive = true;
+			power.isNegative = true;
 			break;
 		case test >= 11 && test <= 25:
 			powerDescription = 'Values personal achievement and influence over others';
-			power.isPositive = true;
+			power.isNegative = true;
 			break;
 		case test >= -10 && test <= 10:
 			powerDescription =
@@ -167,15 +172,15 @@ function describePowerValue(power) {
 			break;
 		case test >= -25 && test <= -11:
 			powerDescription = 'Skeptical of power, sees it as corrupting and potentially harmful';
-			power.isNegative = true;
+			power.isPositive = true;
 			break;
 		case test >= -40 && test <= -26:
 			powerDescription = 'Disdains power, views it as a source of oppression and inequality';
-			power.isNegative = true;
+			power.isPositive = true;
 			break;
 		case test < -40:
 			powerDescription = 'Rejects power entirely, prefers a life of simplicity and independence.';
-			power.isNegative = true;
+			power.isPositive = true;
 			break;
 		default:
 			break;
@@ -192,17 +197,17 @@ function describeCunningValue(cunning) {
 		case test > 40:
 			cunningDescription =
 				'Highly strategic and crafty, excels in planning and is very manipulative';
-			cunning.isPositive = true;
+			cunning.isNegative = true;
 			break;
 		case test >= 26 && test <= 40:
 			cunningDescription =
 				'Clever and strategic, uses cunning and manipulation to achieve goals and to get rid of others';
-			cunning.isPositive = true;
+			cunning.isNegative = true;
 			break;
 		case test >= 11 && test <= 25:
 			cunningDescription =
 				'Adaptable and capable of strategic thinking while manipulating others to get what they want';
-			cunning.isPositive = true;
+			cunning.isNegative = true;
 			break;
 		case test >= -10 && test <= 10:
 			cunningDescription =
@@ -210,15 +215,15 @@ function describeCunningValue(cunning) {
 			break;
 		case test >= -25 && test <= -11:
 			cunningDescription = 'Views being cunning unfavorably, prefers honesty and transparency';
-			cunning.isNegative = true;
+			cunning.isPositive = true;
 			break;
 		case test >= -40 && test <= -26:
 			cunningDescription = 'Disdains being cunning, sees it as deceitful and untrustworthy';
-			cunning.isNegative = true;
+			cunning.isPositive = true;
 			break;
 		case test < -40:
 			cunningDescription = 'Rejects being cunning entirely, values straightforwardness and honesty';
-			cunning.isNegative = true;
+			cunning.isPositive = true;
 			break;
 		default:
 			break;
@@ -412,7 +417,7 @@ function describeLoyaltyValue(loyalty) {
 			break;
 		case test >= -10 && test <= 10:
 			loyaltyDescription =
-				"Doesn't particularly value or devalue loyalty. Has a neutral stance on the concept and may approach loyalty on a case-by-case basis";
+				"Doesn't value or devalue loyalty. Has a neutral stance and may approach loyalty on a case-by-case basis";
 			break;
 		case test >= -25 && test <= -11:
 			loyaltyDescription =
@@ -478,4 +483,49 @@ function describeIndependenceValue(independence) {
 	}
 
 	return independenceDescription;
+}
+
+function describeGreedValue(greed) {
+	const test = greed.value;
+	let greedDescription = '';
+
+	switch (true) {
+		case test > 40:
+			greedDescription =
+				'Possessed by insatiable greed, relentlessly pursues wealth and possessions at any cost';
+			greed.isNegative = true;
+			break;
+		case test >= 26 && test <= 40:
+			greedDescription =
+				'Ambitiously seeks accumulation of riches, willing to take calculated risks for vast rewards';
+			greed.isNegative = true;
+			break;
+		case test >= 11 && test <= 25:
+			greedDescription =
+				'Desires wealth and material gains, pursues opportunities for financial growth';
+			greed.isNegative = true;
+			break;
+		case test >= -10 && test <= 10:
+			greedDescription = 'Maintains a balanced approach to wealth, seeks prosperity without excess';
+			break;
+		case test >= -25 && test <= -11:
+			greedDescription =
+				'Views excess wealth unfavorably, prefers a more moderate and content lifestyle';
+			greed.isPositive = true;
+			break;
+		case test >= -40 && test <= -26:
+			greedDescription =
+				'Disdains greed, seeing it as a destructive force that corrupts individuals and societies';
+			greed.isPositive = true;
+			break;
+		case test < -40:
+			greedDescription =
+				'Rejects the idea of greed entirely, embracing a life of simplicity and detachment from material pursuits';
+			greed.isPositive = true;
+			break;
+		default:
+			break;
+	}
+
+	return greedDescription;
 }
