@@ -91,7 +91,8 @@ function describeLawValue(law) {
 			law.isNegative = true;
 			break;
 		case test >= -40 && test <= -26:
-			lawDescription = 'Disregards laws that are perceived as unjust or oppressive';
+			lawDescription =
+				'Disregards laws, especially those that are perceived as unjust or oppressive';
 			law.isNegative = true;
 			break;
 		case test < -40:
