@@ -2,7 +2,6 @@
     import world from '../../../lib/world-generator-4.js';
     export let data;
     const npc = world.npcs.find(npc=>npc.id===data.npcId)
-    console.log(world.getNpcById(data.npcId));
 </script>
 
 <a href="/#{npc.id}">back</a>
