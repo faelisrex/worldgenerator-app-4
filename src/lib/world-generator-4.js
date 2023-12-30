@@ -88,17 +88,94 @@ export function Npc() {
 		quests: [],
 		alignment: 'N',
 		values: [
-			{ name: 'law', value: 0, isPositive: false, isNegative: false, description: '' },
-			{ name: 'justice', value: 0, isPositive: false, isNegative: false, description: '' },
-			{ name: 'power', value: 0, isPositive: false, isNegative: false, description: '' },
-			{ name: 'greed', value: 0, isPositive: false, isNegative: false, description: '' },
-			{ name: 'compassion', value: 0, isPositive: false, isNegative: false, description: '' },
-			{ name: 'fairness', value: 0, isPositive: false, isNegative: false, description: '' },
-			{ name: 'knowledge', value: 0, isPositive: false, isNegative: false, description: '' },
-			{ name: 'risk taking', value: 0, isPositive: false, isNegative: false, description: '' },
-			{ name: 'loyalty', value: 0, isPositive: false, isNegative: false, description: '' },
-			{ name: 'cunning', value: 0, isPositive: false, isNegative: false, description: '' },
-			{ name: 'independence', value: 0, isPositive: false, isNegative: false, description: '' }
+			{
+				name: 'law',
+				value: 0,
+				valModifier: 0,
+				isPositive: false,
+				isNegative: false,
+				description: ''
+			},
+			{
+				name: 'justice',
+				value: 0,
+				valModifier: 0,
+				isPositive: false,
+				isNegative: false,
+				description: ''
+			},
+			{
+				name: 'power',
+				value: 0,
+				valModifier: 0,
+				isPositive: false,
+				isNegative: false,
+				description: ''
+			},
+			{
+				name: 'greed',
+				value: 0,
+				valModifier: 0,
+				isPositive: false,
+				isNegative: false,
+				description: ''
+			},
+			{
+				name: 'compassion',
+				value: 0,
+				valModifier: 0,
+				isPositive: false,
+				isNegative: false,
+				description: ''
+			},
+			{
+				name: 'fairness',
+				value: 0,
+				valModifier: 0,
+				isPositive: false,
+				isNegative: false,
+				description: ''
+			},
+			{
+				name: 'knowledge',
+				value: 0,
+				valModifier: 0,
+				isPositive: false,
+				isNegative: false,
+				description: ''
+			},
+			{
+				name: 'risk taking',
+				value: 0,
+				valModifier: 0,
+				isPositive: false,
+				isNegative: false,
+				description: ''
+			},
+			{
+				name: 'loyalty',
+				value: 0,
+				valModifier: 0,
+				isPositive: false,
+				isNegative: false,
+				description: ''
+			},
+			{
+				name: 'cunning',
+				value: 0,
+				valModifier: 0,
+				isPositive: false,
+				isNegative: false,
+				description: ''
+			},
+			{
+				name: 'independence',
+				value: 0,
+				valModifier: 0,
+				isPositive: false,
+				isNegative: false,
+				description: ''
+			}
 		],
 		addToWorld(worldObj) {
 			worldObj.npcs.push(this);
