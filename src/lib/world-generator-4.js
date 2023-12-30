@@ -1,6 +1,7 @@
 import { createTaverns } from './extensions/buildings/createTaverns.js';
 import { createFarms } from './extensions/buildings/farms.js';
 import { createSmithies } from './extensions/buildings/smithy.js';
+import { assignValues } from './extensions/npc/traits.js';
 import { createCaves } from './extensions/points-of-interests/caves.js';
 import { createBounties } from './extensions/quests/bountyQuests.js';
 import { createRetrievalQuest } from './extensions/quests/retrievalQuests.js';
@@ -85,6 +86,18 @@ export function Npc() {
 		location: {},
 		items: [],
 		quests: [],
+		values: {
+			law: 0,
+			justice: 0,
+			power: 0,
+			cunning: 0,
+			fairness: 0,
+			knowledge: 0,
+			compassion: 0,
+			riskTaking: 0,
+			loyalty: 0,
+			independence: 0
+		},
 		addToWorld(worldObj) {
 			worldObj.npcs.push(this);
 		},
@@ -171,6 +184,8 @@ world.buildings.forEach((building) => {
 	world.countOf.npcs++;
 	myDict.set(newNpc.id, newNpc);
 });
+
+assignValues(world);
 //--Quests------------------------------------------------------------Quests
 createBounties(genParams.questChance.bounty, world, myDict);
 createRetrievalQuest(genParams.questChance.retrieval, world, myDict);
