@@ -2,14 +2,26 @@
 	import FarmIcon from "../../lib/html/icons/FarmIcon.svg";
   export let settlement;
 </script>
+<style>
+  .Farm {
+    @apply bg-green-400;
+  }
+  .Tavern {
+    @apply bg-slate-400;
+  }
+  .Smithy {
+    @apply bg-amber-400;
+  }
+</style>
+
 
 <div class="flex justify-center">
   <div class="flex flex-wrap justify-center">
     {#each settlement.buildings as building}
-    <div class="flex variant-filled-primary w-[300px] text-sm">
-      <div class=""> </div>
+    <div class="flex variant-filled-primary w-[300px] text-sm items-center">
+      <div class="{building.type} p-1 min-w-[40px] min-h-[40px]"><img class="w-6 block mx-auto" src="/icons/{building.type}Icon.svg" alt=""></div>
       <div>
-        <span class="font-semibold">{building.type}</span>
+        <span class="font-semibold">({building.type})</span>
         {building.name}
       </div>
     </div>
