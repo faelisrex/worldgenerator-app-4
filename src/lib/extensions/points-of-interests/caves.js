@@ -90,11 +90,7 @@ export function createCaves(min, max, worldObj, dict) {
 			caveman.job = getRandomEl(newCave.jobs);
 			caveman.location = location;
 
-			caveman.values.law.value = -25;
-			caveman.values.justice.value = -20;
-			caveman.values.power.value = 30;
-			caveman.values.cunning.value = 20;
-			caveman.values.independence.value = 20;
+			caveman.alignment = 'CN';
 
 			newCave.npc = caveman;
 			newCave.isOccupied = true;
