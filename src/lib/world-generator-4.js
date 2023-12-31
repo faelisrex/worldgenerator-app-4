@@ -16,9 +16,9 @@ import { getRandomEl } from './utils/math-functions.js';
 
 console.log('world-generator-4.js');
 
-function World(name) {
+function World() {
 	return {
-		name,
+		name: '',
 		settlements: [],
 		buildings: [],
 		npcs: [],
@@ -214,9 +214,8 @@ export function Item() {
 }
 
 export function generateNewWorld(genParams) {
-	console.log(genParams);
-
-	const world = new World(getRandomEl(regionNames));
+	const world = new World();
+	world.name = getRandomEl(regionNames);
 	const myDict = new Map();
 
 	//--Settlements-------------------------------------------------------Settlements

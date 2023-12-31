@@ -1,7 +1,8 @@
 <script>
-    import world from '$lib/world-generator-4.js';
     import NpcQuestList from '$lib/components/NpcQuestList.svelte';
     export let data;
+    import {storedWorld} from '$lib/stores.js'
+    let world = $storedWorld;
     const npc = world.npcs.find(npc=>npc.id===data.npcId)
 </script>
 
