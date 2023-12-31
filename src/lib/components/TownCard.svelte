@@ -1,11 +1,15 @@
 <script>
 	import { getRandomEl, getRandomInt } from "../utils/math-functions";
 
-	export let world;
+	import { storedWorld } from "../stores.js";
 	import QuestBoard from "./towncard-components/QuestBoard.svelte";
 	import InterestingPeopleCorner2 from "./towncard-components/InterestingPeopleCorner2.svelte";
 	import TownServices from "./towncard-components/TownServices.svelte";
-
+  
+  let world;
+  storedWorld.subscribe(value=>{
+      world = value;
+  })
 
 </script>
 

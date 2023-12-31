@@ -1,10 +1,6 @@
 <!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
 
-<style>
-	.macondo {
-		font-family: 'Macondo', cursive;
-	}
-</style>
+
 
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-5">
@@ -21,20 +17,12 @@
 </div>
 <div class="">
 	<button class="variant-filled-success p-2 rounded" on:click={requestNewWorld}>Generate New World</button>
-	{#if world.name}
-	<div class="m-5 grid justify-items-center">
-		<h1 class="h1 macondo">{world.name}</h1>
-		<div class="flex flex-wrap justify-center">
-			<TownCard {world}/>
-		</div>
-	</div>
-	{/if}
 </div>
 
 
 <script>
-	import TownCard from '../lib/components/TownCard.svelte';
-	import { generateNewWorld } from '../lib/world-generator-4';
+	import { generateNewWorld } from '$lib/world-generator-4';
+	import { storedWorld } from "$lib/stores.js";
 	let genParams = {
 		nCities: 1,
 		nTowns: 3,
@@ -43,9 +31,9 @@
 			retrieval: 0.28
 		}
 	};
-	let world = {};
 
 	function requestNewWorld(){
-		world = generateNewWorld(genParams);
+		storedWorld.set(generateNewWorld(genParams));
+		return;
 	}
 </script>
