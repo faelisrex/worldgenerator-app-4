@@ -214,8 +214,6 @@ export function Item() {
 }
 
 export function generateNewWorld(genParams) {
-	console.log(genParams);
-
 	const world = new World(getRandomEl(regionNames));
 	const myDict = new Map();
 
