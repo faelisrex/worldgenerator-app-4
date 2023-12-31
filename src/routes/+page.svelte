@@ -1,5 +1,9 @@
 <!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
-
+<style>
+	.macondo {
+		font-family: 'Macondo', cursive;
+	}
+</style>
 
 
 <div class="container h-full mx-auto flex justify-center items-center">
@@ -17,11 +21,20 @@
 </div>
 <div class="">
 	<button class="variant-filled-success p-2 rounded" on:click={requestNewWorld}>Generate New World</button>
+	{#if $storedWorld.name}
+	<div class="m-5 grid justify-items-center">
+    <h1 class="h1 macondo">{$storedWorld.name}</h1>
+    <div class="flex flex-wrap justify-center">
+        <TownCard />
+    </div>
+	</div>
+	{/if}
 </div>
 
 
 <script>
 	import { generateNewWorld } from '$lib/world-generator-4';
+	import TownCard from '$lib/components/TownCard.svelte';
 	import { storedWorld } from "$lib/stores.js";
 	let genParams = {
 		nCities: 1,
@@ -33,9 +46,9 @@
 	};
 
 
-	const requestNewWorld = async() => {
-		const result = await storedWorld.set(generateNewWorld(genParams));
-		// window.location.href="/world";
+	const requestNewWorld = async () => {
+		const result = await generateNewWorld(genParams);
+		storedWorld.set(result);
 		return;
 	}
 </script>
