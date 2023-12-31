@@ -20,16 +20,32 @@
 	</div>
 </div>
 <div class="">
+	<button class="variant-filled-success p-2 rounded" on:click={requestNewWorld}>Generate New World</button>
+	{#if world.name}
 	<div class="m-5 grid justify-items-center">
 		<h1 class="h1 macondo">{world.name}</h1>
 		<div class="flex flex-wrap justify-center">
 			<TownCard {world}/>
 		</div>
 	</div>
+	{/if}
 </div>
 
 
 <script>
-	import world from '../lib/world-generator-4.js'
 	import TownCard from '../lib/components/TownCard.svelte';
+	import { generateNewWorld } from '../lib/world-generator-4';
+	let genParams = {
+		nCities: 1,
+		nTowns: 3,
+		questChance: {
+			bounty: 0.28,
+			retrieval: 0.28
+		}
+	};
+	let world = {};
+
+	function requestNewWorld(){
+		world = generateNewWorld(genParams);
+	}
 </script>
