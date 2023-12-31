@@ -213,67 +213,61 @@ export function Item() {
 	};
 }
 
-const genParams = {
-	nCities: 1,
-	nTowns: 3,
-	questChance: {
-		bounty: 0.28,
-		retrieval: 0.28
-	}
-};
+export function generateNewWorld(genParams) {
+	console.log(genParams);
 
-const world = new World(getRandomEl(regionNames));
-const myDict = new Map();
+	const world = new World(getRandomEl(regionNames));
+	const myDict = new Map();
 
-//--Settlements-------------------------------------------------------Settlements
-createCities(genParams, world, myDict);
-createTowns(genParams, world, myDict);
+	//--Settlements-------------------------------------------------------Settlements
+	createCities(genParams, world, myDict);
+	createTowns(genParams, world, myDict);
 
-//--Resources---------------------------------------------------------Resources
-selectResources(world);
+	//--Resources---------------------------------------------------------Resources
+	selectResources(world);
 
-//--Buildings---------------------------------------------------------Buildings
-createTaverns(world, myDict);
-createFarms(world, myDict);
-createSmithies(world, myDict);
+	//--Buildings---------------------------------------------------------Buildings
+	createTaverns(world, myDict);
+	createFarms(world, myDict);
+	createSmithies(world, myDict);
 
-createCaves(5, 10, world, myDict);
-//--NPCs--------------------------------------------------------------NPCs
-world.buildings.forEach((building) => {
-	if (building.npcs.length > 0) {
-		console.log(building.npcs);
-		return;
-	}
+	createCaves(5, 10, world, myDict);
+	//--NPCs--------------------------------------------------------------NPCs
+	world.buildings.forEach((building) => {
+		if (building.npcs.length > 0) {
+			console.log(building.npcs);
+			return;
+		}
 
-	const newNpc = new Npc();
-	newNpc.id = `npc${world.countOf.npcs}`;
-	newNpc.type = 'Townfolk';
-	newNpc.firstName = getRandomEl(humanFirstNames);
-	newNpc.lastName = getRandomEl(humanLastNames);
+		const newNpc = new Npc();
+		newNpc.id = `npc${world.countOf.npcs}`;
+		newNpc.type = 'Townfolk';
+		newNpc.firstName = getRandomEl(humanFirstNames);
+		newNpc.lastName = getRandomEl(humanLastNames);
 
-	// Building details
-	newNpc.building = building;
-	newNpc.job = getRandomEl(building.jobs);
-	newNpc.location = building.location;
-	building.npcs.push(newNpc);
+		// Building details
+		newNpc.building = building;
+		newNpc.job = getRandomEl(building.jobs);
+		newNpc.location = building.location;
+		building.npcs.push(newNpc);
 
-	// Settlement details
-	newNpc.addToSettlement(newNpc.location);
+		// Settlement details
+		newNpc.addToSettlement(newNpc.location);
 
-	// World details
-	newNpc.addToWorld(world);
-	world.countOf.npcs++;
-	myDict.set(newNpc.id, newNpc);
-});
+		// World details
+		newNpc.addToWorld(world);
+		world.countOf.npcs++;
+		myDict.set(newNpc.id, newNpc);
+	});
 
-assignValues(world);
-generateNpcDescriptions(world);
-//--Quests------------------------------------------------------------Quests
-createBounties(genParams.questChance.bounty, world, myDict);
-createRetrievalQuest(genParams.questChance.retrieval, world, myDict);
+	assignValues(world);
+	generateNpcDescriptions(world);
+	//--Quests------------------------------------------------------------Quests
+	createBounties(genParams.questChance.bounty, world, myDict);
+	createRetrievalQuest(genParams.questChance.retrieval, world, myDict);
 
-console.log(world);
-console.log(myDict);
-console.table(world.npcs, ['id', 'firstName', 'job', 'alignment', 'type']);
-
-export default world;
+	console.log(world);
+	console.log(myDict);
+	console.table(world.npcs, ['id', 'firstName', 'job', 'alignment', 'type']);
+	return world;
+}

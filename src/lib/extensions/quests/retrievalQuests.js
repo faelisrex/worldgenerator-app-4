@@ -69,4 +69,5 @@ export function createRetrievalQuest(probability, worldObj, dict) {
 			dict.set(newItem.id, newItem);
 		}
 	});
+	return;
 }
