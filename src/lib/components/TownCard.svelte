@@ -16,6 +16,7 @@
 <style>
   .town-card {
      max-width: 1000px;
+     /* border: 1px solid lightsteelblue; */
   }
 	.macondo {
 		font-family: 'Macondo', cursive;
@@ -25,11 +26,15 @@
 
 {#each world.settlements as settlement}
 <!-- bg-gradient-to-br variant-gradient-primary-secondary -->
-  <div class="card flex-wrap m-3 pt-3 pb-8 town-card variant-glass-primary">
-    <h2 class="h2 text-center macondo" id='{settlement.id}'>{settlement.name}</h2>
+  <div class="town-card">
+    <h2 class="h2" id='{settlement.id}'>{settlement.name}</h2>
+    <hr>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ab repellat et earum ut assumenda aliquid numquam unde ducimus. Voluptas libero omnis recusandae sunt perferendis accusantium maxime quod eveniet alias.</p>
+    <br>
     <TownServices {settlement} />
     <QuestBoard {settlement} />
     <InterestingPeopleCorner2 {settlement} />
+
     <!-- Points of Interests -->
     <h3 class="h4 text-center pt-1">Nearby Locations</h3>
     <div class="flex flex-wrap justify-center">
