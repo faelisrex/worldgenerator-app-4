@@ -100,4 +100,5 @@ export function createBounties(probability, worldObj, dict) {
 			dict.set(newQuest.id, newQuest);
 		}
 	});
+	return;
 }
