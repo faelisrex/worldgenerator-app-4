@@ -1,8 +1,8 @@
 <script>
-	import { getRandomEl, getRandomInt } from "../lib/utils/math-functions";
+	import { getRandomEl, getRandomInt } from "../utils/math-functions";
 
 	export let world;
-	import QuestBoard from "./QuestBoard.svelte";
+	import QuestBoard from "./towncard-components/QuestBoard.svelte";
 	import InterestingPeopleCorner2 from "./towncard-components/InterestingPeopleCorner2.svelte";
 	import TownServices from "./towncard-components/TownServices.svelte";
 

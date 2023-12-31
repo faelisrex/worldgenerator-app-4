@@ -30,7 +30,6 @@
 
 
 <script>
-	import { getRandomEl } from '../lib/utils/math-functions.js';
 	import world from '../lib/world-generator-4.js'
-	import TownCard from '../components/TownCard.svelte';
+	import TownCard from '../lib/components/TownCard.svelte';
 </script>

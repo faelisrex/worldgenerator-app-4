@@ -1,5 +1,4 @@
 <script>
-	import FarmIcon from "../../lib/html/icons/FarmIcon.svg";
   export let settlement;
 </script>
 <style>
