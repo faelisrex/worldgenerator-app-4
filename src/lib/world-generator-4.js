@@ -1,6 +1,7 @@
 import { createTaverns } from './extensions/buildings/createTaverns.js';
 import { createFarms } from './extensions/buildings/farms.js';
 import { createSmithies } from './extensions/buildings/smithy.js';
+import { generateNpcDescriptions } from './extensions/npc/description.js';
 import { assignValues } from './extensions/npc/traits.js';
 import { createCaves } from './extensions/points-of-interests/caves.js';
 import { createBounties } from './extensions/quests/bountyQuests.js';
@@ -87,6 +88,7 @@ export function Npc() {
 		items: [],
 		quests: [],
 		alignment: 'N',
+		description: '',
 		values: [
 			{
 				name: 'law',
@@ -265,6 +267,7 @@ world.buildings.forEach((building) => {
 });
 
 assignValues(world);
+generateNpcDescriptions(world);
 //--Quests------------------------------------------------------------Quests
 createBounties(genParams.questChance.bounty, world, myDict);
 createRetrievalQuest(genParams.questChance.retrieval, world, myDict);

@@ -8,9 +8,10 @@
 </script>
 
 <a href="/#{npc.id}">back</a>
-<h1 class="h1">npc page</h1>
-<h2 class="h2">{npc.getName()}</h2>
 <div class="variant-filled-primary">
+    <h2 class="h2">{npc.getName()}</h2>
+    <h3 class="h3">description</h3>
+    <p>{npc.description}</p>
     <h3 class="h3">Beliefs</h3>
     {#each npc.values as value}
     <p>
