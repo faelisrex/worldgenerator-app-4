@@ -1,6 +1,6 @@
 <script>
-	import { bountyDesc } from "../lib/extensions/quests/bountyQuests";
-  import { getRandomEl, shuffleArray } from "../lib/utils/math-functions";
+	import { bountyDesc } from "../../extensions/quests/bountyQuests";
+  import { getRandomEl } from "../../utils/math-functions";
 
 
   export let settlement;
