@@ -32,8 +32,10 @@
 		}
 	};
 
-	function requestNewWorld(){
-		storedWorld.set(generateNewWorld(genParams));
+
+	const requestNewWorld = async() => {
+		const result = await storedWorld.set(generateNewWorld(genParams));
+		// window.location.href="/world";
 		return;
 	}
 </script>
