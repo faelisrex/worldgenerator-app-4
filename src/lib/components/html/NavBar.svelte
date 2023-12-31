@@ -5,6 +5,7 @@
     </a>
   </div>
   <ul class="flex list-none">
+    <li><a href="/world">World</a></li>
     <li><a href="/about">About</a></li>
   </ul>
 </nav>
