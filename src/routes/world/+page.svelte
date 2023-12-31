@@ -16,7 +16,6 @@
 			retrieval: 0.28
 		}
 	};
-    let world = $storedWorld;
 </script>
 
 <style>
@@ -29,7 +28,7 @@
 	<button class="variant-filled-success p-2 rounded" on:click={requestNewWorld}>Generate New World</button>
 </div>
 <div class="m-5 grid justify-items-center">
-    <h1 class="h1 macondo">{world.name}</h1>
+    <h1 class="h1 macondo">{$storedWorld.name}</h1>
     <div class="flex flex-wrap justify-center">
         <TownCard />
     </div>
