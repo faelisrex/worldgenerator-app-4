@@ -419,6 +419,5 @@ export function generateNpcDescriptions(worldObj) {
 		)} hair. Their eyes are a ${getRandomEl(eyeDescriptions)} shade of ${getRandomEl(
 			eyeColors
 		)}, and they ${getRandomEl(buildDescriptions)}. They ${getRandomEl(strikingPhysicalFeatures)}.`;
-		console.log(npc.description);
 	});
 }
