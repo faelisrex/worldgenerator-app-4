@@ -1,8 +1,6 @@
 <script>
-	import { bountyDesc } from '../../../lib/extensions/quests/bountyQuests.js';
-	import { getRandomEl } from '../../../lib/utils/math-functions.js';
-    import world from '../../../lib/world-generator-4.js';
-    import NpcQuestList from '../../../components/NpcQuestList.svelte';
+    import world from '$lib/world-generator-4.js';
+    import NpcQuestList from '$lib/components/NpcQuestList.svelte';
     export let data;
     const npc = world.npcs.find(npc=>npc.id===data.npcId)
 </script>
