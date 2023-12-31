@@ -1,10 +1,12 @@
 <script>
     import NpcQuestList from '$lib/components/NpcQuestList.svelte';
     export let data;
-    // const npc = world.npcs.find(npc=>npc.id===data.npcId)
+    import {storedWorld} from '$lib/stores.js'
+    let world = $storedWorld;
+    const npc = world.npcs.find(npc=>npc.id===data.npcId)
 </script>
 
-<!-- <a href="/#{npc.id}">back</a>
+<a href="/#{npc.id}">back</a>
 <div class="variant-filled-primary">
     <h2 class="h2">{npc.getName()}</h2>
     <h3 class="h3">description</h3>
@@ -23,4 +25,4 @@
     {/each}
     <h3 class="h3">Quests</h3>
     <NpcQuestList {npc} />
-</div> -->
+</div>
