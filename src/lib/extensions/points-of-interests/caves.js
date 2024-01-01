@@ -80,7 +80,7 @@ export function createCaves(min, max, worldObj, dict) {
 		newCave.location = location;
 
 		if (executeWithProbability(0.5)) {
-			const caveman = new Caveman();
+			let caveman = new Caveman();
 			caveman.id = `npc${worldObj.countOf.npcs}`;
 			caveman.type = 'Outsider';
 			caveman.firstName = getRandomEl(sinisterFirstNames);
@@ -89,6 +89,8 @@ export function createCaves(min, max, worldObj, dict) {
 			caveman.building = newCave;
 			caveman.job = getRandomEl(newCave.jobs);
 			caveman.location = location;
+
+			caveman.alignment = 'CN';
 
 			newCave.npc = caveman;
 			newCave.isOccupied = true;

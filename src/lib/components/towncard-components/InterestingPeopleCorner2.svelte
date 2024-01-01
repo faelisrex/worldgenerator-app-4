@@ -1,0 +1,21 @@
+<script>
+	import { capitalize } from "$lib/utils/math-functions";
+	import NpcQuestList from "../NpcQuestList.svelte";
+
+  export let settlement;
+</script>
+
+<div class="">
+  {#each settlement.npcs as npc}
+    <div class="flex flex-row pt-3">
+      <div class="min-w-[200px] max-w-[200px] font-semibold" id={npc.id}>
+        <a href="/npc/{npc.id}">{npc.getName()}</a>
+      </div>
+      <div class="text-sm pl-2">
+        <p><span class="font-semibold">{capitalize(npc.job)}</span> at <span class="font-semibold">{npc.building.name}</span>. {npc.firstName} is {npc.description}</p>
+        <p><NpcQuestList {npc} /></p>
+      </div>
+    </div>
+  {/each}
+</div>
+

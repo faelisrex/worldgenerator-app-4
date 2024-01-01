@@ -118,7 +118,6 @@
 	"files.exclude": {
 		".*": true,
 		".svelte-kit/": true,
-		"node_modules/": true,
-		"package*": true
+		"node_modules/": true
 	}
 }

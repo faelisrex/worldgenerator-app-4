@@ -1,10 +1,10 @@
 <!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
-
 <style>
 	.macondo {
 		font-family: 'Macondo', cursive;
 	}
 </style>
+
 
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-5">
@@ -20,17 +20,33 @@
 	</div>
 </div>
 <div class="">
-	<div class="m-5 grid justify-items-center">
-		<h1 class="h1 macondo">{world.name}</h1>
-		<div class="flex flex-wrap justify-center">
-			<TownCard {world}/>
-		</div>
-	</div>
+	<button class="bg-green-400 p-2 rounded" on:click={requestNewWorld}>Generate New World</button>
+	{#if $storedWorld.name}
+    <h1 class="h1 macondo text-center">{$storedWorld.name}</h1>
+    <div class="flex flex-wrap justify-center">
+        <TownCard />
+    </div>
+	{/if}
 </div>
 
 
 <script>
-	import { getRandomEl } from '../lib/utils/math-functions.js';
-	import world from '../lib/world-generator-4.js'
-	import TownCard from '../components/TownCard.svelte';
+	import { generateNewWorld } from '$lib/world-generator-4';
+	import TownCard from '$lib/components/TownCard.svelte';
+	import { storedWorld } from "$lib/stores.js";
+	let genParams = {
+		nCities: 1,
+		nTowns: 3,
+		questChance: {
+			bounty: 0.28,
+			retrieval: 0.28
+		}
+	};
+
+
+	const requestNewWorld = async () => {
+		const result = await generateNewWorld(genParams);
+		storedWorld.set(result);
+		return;
+	}
 </script>

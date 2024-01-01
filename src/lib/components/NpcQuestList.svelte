@@ -1,6 +1,6 @@
 <script>
-	import { bountyDesc } from "../lib/extensions/quests/bountyQuests";
-	import { getRandomEl } from "../lib/utils/math-functions";
+	import { bountyDesc } from "../extensions/quests/bountyQuests";
+	import { getRandomEl } from "../utils/math-functions";
   export let npc;
 </script>
 
@@ -8,7 +8,7 @@
     {#if quest.type === 'Bounty'}
       <div class="flex">
         <p>🎯</p>
-        <p>{npc.firstName} {getRandomEl(['needs help in stopping', 'wants to stop'])} <a href="#{quest.targetNpc.location.id}" class="underline decoration-dotted font-semibold italic">{quest.targetNpc.getName()}</a> 
+        <p>{npc.firstName} {getRandomEl(['needs help in stopping', 'wants to stop'])} <a href="/#{quest.targetNpc.location.id}" class="underline decoration-dotted font-semibold italic">{quest.targetNpc.getName()}</a> 
           in the {quest.targetNpc.building.name} 
           ({quest.targetNpc.type ==='Townfolk'? 'in':'near'}
           {quest.targetNpc.location.name}) by {getRandomEl(bountyDesc.bountyMethodSerious)} or by {getRandomEl(bountyDesc.bountyMethodFunny)}.
@@ -20,7 +20,7 @@
         <p>{quest.owner.firstName} {getRandomEl(['wants to find','needs help in looking for'])} their {quest.targetItem.name}. 
           <span class="text-xs">
             It is with 
-            <a href="#{quest.targetItem.inThePocketsOf.location.id}" class="underline decoration-dotted font-semibold italic"> {quest.targetItem.inThePocketsOf.getName()}</a>
+            <a href="/#{quest.targetItem.inThePocketsOf.location.id}" class="underline decoration-dotted font-semibold italic"> {quest.targetItem.inThePocketsOf.getName()}</a>
             {quest.targetItem.inThePocketsOf.type === 'Townfolk'? 'in' : 'near'}
             {quest.targetItem.inThePocketsOf.location.name}.
           </span>
