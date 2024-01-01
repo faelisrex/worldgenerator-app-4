@@ -15,8 +15,9 @@
 
 <p>
   {#each settlement.buildings as building}
-    <span>🏛️ </span><span class="font-semibold">({building.type}) </span><span>{building.name}, </span> and others.
+  <span>🏛️ </span><span class="font-semibold">({building.type}) </span><span>{building.name}, </span>
   {/each}
+  and others.
 </p>
 
 <!-- v2

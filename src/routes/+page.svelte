@@ -20,7 +20,7 @@
 	</div>
 </div>
 <div class="">
-	<button class="variant-filled-success p-2 rounded" on:click={requestNewWorld}>Generate New World</button>
+	<button class="bg-green-400 p-2 rounded" on:click={requestNewWorld}>Generate New World</button>
 	{#if $storedWorld.name}
     <h1 class="h1 macondo text-center">{$storedWorld.name}</h1>
     <div class="flex flex-wrap justify-center">

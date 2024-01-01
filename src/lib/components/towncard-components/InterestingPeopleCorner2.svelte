@@ -5,21 +5,17 @@
   export let settlement;
 </script>
 
-<h4 class="h4 text-center py-1"  id="{settlement.id}">Interesting people</h4>
-<div class="flex justify-center ">
-  
-  <div class="flex-col justify-center variant-filled-primary rounded p-5 max-w-[625px]">
-    {#each settlement.npcs as npc}
-      <div class="flex flex-row border-b-2">
-        <div class="min-w-[165px] max-w-[165px] font-semibold" id={npc.id}>
-          <a href="/npc/{npc.id}">{npc.getName()}</a>
-        </div>
-        <div class="text-sm pl-2">
-          <p>{capitalize(npc.job)} at {npc.building.name}</p>
-          <p><NpcQuestList {npc} /></p>
-        </div>
+<div class="">
+  {#each settlement.npcs as npc}
+    <div class="flex flex-row pt-3">
+      <div class="min-w-[200px] max-w-[200px] font-semibold" id={npc.id}>
+        <a href="/npc/{npc.id}">{npc.getName()}</a>
       </div>
-    {/each}
-  </div>
-
+      <div class="text-sm pl-2">
+        <p><span class="font-semibold">{capitalize(npc.job)}</span> at <span class="font-semibold">{npc.building.name}</span>. {npc.firstName} is {npc.description}</p>
+        <p><NpcQuestList {npc} /></p>
+      </div>
+    </div>
+  {/each}
 </div>
+
