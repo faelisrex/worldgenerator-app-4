@@ -2,20 +2,15 @@
   export let settlement;
 </script>
 <style>
-  .Farm {
-    @apply bg-green-400;
-  }
-  .Tavern {
-    @apply bg-slate-400;
-  }
-  .Smithy {
-    @apply bg-amber-400;
+  .icon {
+    display: inline;
+    height: 1.15rem;
   }
 </style>
 
 <p>
   {#each settlement.buildings as building}
-  <span>🏛️ </span><span class="font-semibold">({building.type}) </span><span>{building.name}, </span>
+  <span>&nbsp&nbsp<img class="icon" src="src\lib\icons\{building.type}Icon.svg" alt=""> </span><span class="font-semibold">({building.type}) </span><span>{building.name}, </span>
   {/each}
   and others.
 </p>
