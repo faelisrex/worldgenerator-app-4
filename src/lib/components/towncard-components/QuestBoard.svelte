@@ -7,12 +7,6 @@
 
 </script>
 
-<style>
-  .coming-soon {
-    font-family: 'Coming Soon', cursive;
-  }
-</style>
-
 <div class="flex flex-wrap text-sm mt-2">
   {#each settlement.quests as quest}
     <a class="card card-hover bg-primary-100 m-1 p-2 max-w-[140px] leading-4 shadow" href='#{quest.owner.location.id}'>
