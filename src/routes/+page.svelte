@@ -3,6 +3,9 @@
 	.macondo {
 		font-family: 'Macondo', cursive;
 	}
+	.tavern-icon {
+		background-image: url('../lib/icons/FarmIcon.svg');
+	}
 </style>
 
 
