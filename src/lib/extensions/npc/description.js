@@ -1,30 +1,30 @@
 import { getRandomEl } from '../../utils/math-functions';
 
 const initialDescriptors = [
-	'A lively and quirky',
-	'An energetic and unconventional',
-	'A dynamic and offbeat',
-	'A jubilant and spontaneous',
-	'A radiant and imaginative',
-	'An effervescent and inventive',
-	'An audacious and carefree',
-	'A spirited and intrepid',
-	'A fearless and creative',
-	'A magnetic and unrestrained',
-	'An exuberant and unbridled',
-	'A vivacious and daring',
-	'A dynamic and whimsical',
-	'A relentless and vibrant',
-	'An animated and spirited',
-	'An unstoppable and free-spirited',
-	'A jubilant and bold',
-	'A flamboyant and imaginative',
-	'A daring and unbounded',
-	'A vibrant and fearless',
-	'An animated and inventive',
-	'A magnetic and spirited'
+	'a lively and quirky',
+	'a dynamic and offbeat',
+	'a jubilant and spontaneous',
+	'a radiant and imaginative',
+	'a spirited and intrepid',
+	'a fearless and creative',
+	'a magnetic and unrestrained',
+	'a vivacious and daring',
+	'a dynamic and whimsical',
+	'a relentless and vibrant',
+	'a jubilant and bold',
+	'a flamboyant and imaginative',
+	'a daring and unbounded',
+	'a vibrant and fearless',
+	'a magnetic and spirited',
+	'an energetic and unconventional',
+	'an exuberant and unbridled',
+	'an animated and spirited',
+	'an unstoppable and free-spirited',
+	'an animated and inventive',
+	'an effervescent and inventive',
+	'an audacious and carefree'
 ];
-const individual = ['person', 'character', 'unique soul'];
+const individual = ['person', 'character', 'unique soul', 'soul'];
 const strikingWords = [
 	'remarkable',
 	'impressive',

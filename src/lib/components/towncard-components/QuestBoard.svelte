@@ -13,10 +13,9 @@
   }
 </style>
 
-<h4 class="h4 text-center py-1">📜 Quest Board/Rumors</h4>
-<div class="flex flex-wrap justify-center px-5 text-sm font-semibold coming-soon">
+<div class="flex flex-wrap text-sm mt-2">
   {#each settlement.quests as quest}
-    <a class="card card-hover variant-filled-primary m-1 p-2 max-w-[150px] leading-4" href='#{quest.owner.location.id}'>
+    <a class="card card-hover bg-primary-100 m-1 p-2 max-w-[140px] leading-4 shadow" href='#{quest.owner.location.id}'>
 
       {#if quest.type === 'Bounty'}
         <p>🎯 {getRandomEl(bountyDesc.greetingsBountyDesc)}, {getRandomEl(bountyDesc.adventurersBountyDesc)}! 
@@ -35,7 +34,7 @@
         
         
         <div class="flex justify-end">
-          <span class="text-sky-800 italic text-xs">-{quest.owner.getName()}</span>
+          <span class="text-tertiary-700 italic text-sm">-{quest.owner.getName()}</span>
         </div>
     </a>
   {/each}

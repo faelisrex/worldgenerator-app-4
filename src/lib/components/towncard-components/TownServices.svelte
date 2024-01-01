@@ -13,7 +13,14 @@
   }
 </style>
 
+<p>
+  {#each settlement.buildings as building}
+  <span>🏛️ </span><span class="font-semibold">({building.type}) </span><span>{building.name}, </span>
+  {/each}
+  and others.
+</p>
 
+<!-- v2
 <div class="flex justify-center py-1">
   <div class="flex flex-wrap justify-center">
     {#each settlement.buildings as building}
@@ -24,9 +31,9 @@
     </div>
     {/each}
   </div>
-</div>
+</div> -->
 
-<!-- 
+<!-- v1
 <div class="flex flex-wrap justify-center p-3">
   {#each settlement.buildings as building}
     <div class="card bldg-card variant-filled-primary  max-w-[130px]">

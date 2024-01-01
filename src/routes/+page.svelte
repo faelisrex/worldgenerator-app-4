@@ -20,14 +20,12 @@
 	</div>
 </div>
 <div class="">
-	<button class="variant-filled-success p-2 rounded" on:click={requestNewWorld}>Generate New World</button>
+	<button class="bg-green-400 p-2 rounded" on:click={requestNewWorld}>Generate New World</button>
 	{#if $storedWorld.name}
-	<div class="m-5 grid justify-items-center">
-    <h1 class="h1 macondo">{$storedWorld.name}</h1>
+    <h1 class="h1 macondo text-center">{$storedWorld.name}</h1>
     <div class="flex flex-wrap justify-center">
         <TownCard />
     </div>
-	</div>
 	{/if}
 </div>
 
