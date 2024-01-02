@@ -130,7 +130,7 @@ export default [
 	'Arnau',
 	'Berta',
 	'Carles',
-	'Dolors',
+	'Dolores',
 	'Esteve',
 	'Frederic',
 	'Gemma',
