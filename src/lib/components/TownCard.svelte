@@ -18,12 +18,14 @@
   <div class="town-card my-5 pb-5">
     <h2 class="h2" id='{settlement.id}'><span class="font-semibold">{settlement.name}</span></h2>
     <hr>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ab repellat et earum ut assumenda aliquid numquam unde ducimus. Voluptas libero omnis recusandae sunt perferendis accusantium maxime quod eveniet alias.</p>
+    <p>Cities and Towns are generated to feature diverse sets of resources. Settlements vary in abundance (or scarcity) of resources which contribute to the settlement's character. The presence of <img class="icon" src="/icons/FarmIcon.svg" alt=""> Farms, for example, indicate nearby farmland. The presence of <img class="icon" src="/icons/SmithyIcon.svg" alt=""> Smithies indicate a local supply of minerals. These resources are listed below: </p>
     <br>
     <TownServices {settlement} /> <br>
-    <h3 class="h3 font-semibold">Quest Board/Rumors</h3>
-    <hr>
-    <QuestBoard {settlement} /> <br>
+    {#if settlement.quests.length > 0}
+      <h3 class="h3 font-semibold">Quest Board/Rumors</h3>
+      <hr>
+      <QuestBoard {settlement} /> <br>
+    {/if}
     <h3 class="h3 font-semibold">Interesting NPCs</h3>
     <hr>
     <InterestingPeopleCorner2 {settlement} />
