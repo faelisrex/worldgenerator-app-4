@@ -21,10 +21,10 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ab repellat et earum ut assumenda aliquid numquam unde ducimus. Voluptas libero omnis recusandae sunt perferendis accusantium maxime quod eveniet alias.</p>
     <br>
     <TownServices {settlement} /> <br>
-    <h3 class="h3">Quest Board/Rumors</h3>
+    <h3 class="h3 font-semibold">Quest Board/Rumors</h3>
     <hr>
     <QuestBoard {settlement} /> <br>
-    <h3 class="h3">Interesting NPCs</h3>
+    <h3 class="h3 font-semibold">Interesting NPCs</h3>
     <hr>
     <InterestingPeopleCorner2 {settlement} />
 
