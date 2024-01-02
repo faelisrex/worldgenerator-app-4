@@ -20,10 +20,18 @@
 	</div>
 </div>
 <div class="">
-	<button class="bg-green-400 p-2 rounded" on:click={requestNewWorld}>Generate New World</button>
+	<section class="bg-white dark:bg-gray-900">
+    <div class="py-8 px-10 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+        <div class="max-w-screen-md">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Generate World</h2>
+            <p class="mb-8 font-light text-gray-500 sm:text-xl dark:text-gray-400">Generate world description</p>
+						<button class="bg-green-400 p-2 rounded" on:click={requestNewWorld}>Generate New World</button>
+        </div>
+    </div>
+	</section>
 	{#if $storedWorld.name}
     <h1 class="h1 macondo text-center">{$storedWorld.name}</h1>
-    <div class="flex flex-wrap justify-center">
+    <div class="py-8 px-10 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
         <TownCard />
     </div>
 	{/if}

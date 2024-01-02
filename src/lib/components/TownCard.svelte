@@ -15,7 +15,7 @@
 
 <style>
   .town-card {
-     max-width: 1000px;
+     /* max-width: 1000px; */
      /* border: 1px solid lightsteelblue; */
   }
 </style>
@@ -23,7 +23,7 @@
 
 {#each world.settlements as settlement}
 <!-- bg-gradient-to-br variant-gradient-primary-secondary -->
-  <div class="town-card m-5 pb-5">
+  <div class="town-card my-5 pb-5">
     <h2 class="h2" id='{settlement.id}'><span class="font-semibold">{settlement.name}</span></h2>
     <hr>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ab repellat et earum ut assumenda aliquid numquam unde ducimus. Voluptas libero omnis recusandae sunt perferendis accusantium maxime quod eveniet alias.</p>
