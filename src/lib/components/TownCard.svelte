@@ -13,14 +13,6 @@
 
 </script>
 
-<style>
-  .town-card {
-     /* max-width: 1000px; */
-     /* border: 1px solid lightsteelblue; */
-  }
-</style>
-
-
 {#each world.settlements as settlement}
 <!-- bg-gradient-to-br variant-gradient-primary-secondary -->
   <div class="town-card my-5 pb-5">
