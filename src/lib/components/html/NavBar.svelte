@@ -2,6 +2,15 @@
   import { LightSwitch } from '@skeletonlabs/skeleton';
 </script>
 
+<style>
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%; 
+}
+  
+</style>
+
 <nav class="flex justify-between p-4 mb-2 bg-primary-400 text-black dark:bg-slate-900 dark:text-white">
   <div>
     <a href="/">
