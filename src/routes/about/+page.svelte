@@ -10,7 +10,7 @@
     <h2 class="h2">About page</h2>
     <h3 class="h3">About Program</h3>
     <p>
-        This is a simple world generation program for table top rpgs. It is born out of the need to populate worlds easily so I could focus on "plot" points. This world generator, aptly named "World Generator" will generate a city and a few towns for you, populate it with npcs, give them quests, and using normal distribution personalities that fit their roles in those settlements. There are points of interests as well and may be occupied by an NPC or a bear.
+        This is a simple world generation program for table top rpgs. It is born out of the need to populate worlds easily so I could focus on "plot" points. This world generator, aptly named "World Generator" will generate a city and a few towns for you, populate it with npcs, give them quests. I also used normal distribution and adjusted means to develop personalities that fit their roles in those settlements (this was highly inspired by Zack and Tarn Adams). There are points of interests as well and may be occupied by an NPC or a bear.
     </p>
     <br>
     <h3 class="h3">About me</h3>
