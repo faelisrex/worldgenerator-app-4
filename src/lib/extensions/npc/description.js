@@ -1,3 +1,4 @@
+import { addArticle } from '../../utils/language';
 import { getRandomEl } from '../../utils/math-functions';
 
 const initialDescriptors = [
@@ -104,10 +105,10 @@ const strikingWords = [
 	'famous',
 	'notable',
 	'acclaimed',
-	'lauded',
+	'laudable',
 	'praised',
 	'applauded',
-	'commended'
+	'commendable'
 ];
 const hairColors = [
 	'black',
@@ -165,17 +166,12 @@ const hairTypes = [
 const eyeDescriptions = [
 	'captivating',
 	'hypnotic',
-	'enchanting',
-	'alluring',
 	'mesmerizing',
 	'spellbinding',
 	'radiant',
 	'magnetic',
-	'entrancing',
 	'bewitching',
-	'expressive',
 	'piercing',
-	'intense',
 	'sparkling',
 	'glistening',
 	'luminous',
@@ -190,16 +186,8 @@ const eyeDescriptions = [
 	'mysterious',
 	'sensual',
 	'dreamy',
-	'ethereal',
 	'hypnotizing',
-	'intoxicating',
-	'enigmatic',
 	'radiant',
-	'enrapturing',
-	'enthralling',
-	'invigorating',
-	'engrossing',
-	'absorbing',
 	'glimmering',
 	'glinting',
 	'twinkling',
@@ -213,11 +201,24 @@ const eyeDescriptions = [
 	'beaming',
 	'luminescent',
 	'phosphorescent',
-	'iridescent',
-	'opalescent',
 	'vibrant',
 	'colorful',
 	'fiery',
+	'intoxicating',
+	'enchanting',
+	'lluring',
+	'entrancing',
+	'expressive',
+	'intense',
+	'ethereal',
+	'enigmatic',
+	'enrapturing',
+	'enthralling',
+	'invigorating',
+	'engrossing',
+	'bsorbing',
+	'iridescent',
+	'opalescent',
 	'electric',
 	'vivid',
 	'piercing',
@@ -228,7 +229,7 @@ const eyeDescriptions = [
 	'wise',
 	'judicious',
 	'insightful',
-	'astute',
+	'stute',
 	'intelligent',
 	'knowing',
 	'knowledgeable',
@@ -414,9 +415,9 @@ export function generateNpcDescriptions(worldObj) {
 	worldObj.npcs.forEach((npc) => {
 		npc.description = `${getRandomEl(initialDescriptors)} ${getRandomEl(
 			individual
-		)} with ${getRandomEl(strikingWords)} ${getRandomEl(hairColors)}, ${getRandomEl(
+		)} with ${addArticle(getRandomEl(strikingWords))} ${getRandomEl(hairColors)}, ${getRandomEl(
 			hairTypes
-		)} hair. Their eyes are a ${getRandomEl(eyeDescriptions)} shade of ${getRandomEl(
+		)} hair. Their eyes are ${addArticle(getRandomEl(eyeDescriptions))} shade of ${getRandomEl(
 			eyeColors
 		)}, and they ${getRandomEl(buildDescriptions)}. They ${getRandomEl(strikingPhysicalFeatures)}.`;
 	});

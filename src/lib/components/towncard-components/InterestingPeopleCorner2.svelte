@@ -1,5 +1,5 @@
 <script>
-	import { capitalize } from "$lib/utils/math-functions";
+	import { capitalize } from "../../utils/language";
 	import NpcQuestList from "../NpcQuestList.svelte";
 
   export let settlement;
