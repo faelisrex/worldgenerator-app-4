@@ -16,8 +16,6 @@ export function getThreeRandTable(first, second, third) {
 	return `${getRandomEl(first)} ${getRandomEl(second)} ${getRandomEl(third)}`;
 }
 
-export const capitalize = (s) => s && s[0].toUpperCase() + s.slice(1);
-
 export function shuffleArray(array) {
 	let currentIndex = array.length,
 		randomIndex;
