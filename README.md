@@ -1,3 +1,7 @@
+# Acklowedgements
+
+Big thanks to the helpful people on the discord server The Programmer's Hangout. Especially **suXin** (provided lots of feedback on my javascript), **Sebs** (provided the single best resource on how to write clean code,OOP in JS ), **engage** (very engaging, also provided feedback),**Fin**,**TheBlue**, **snuzzers** and **sharky** (provided feedback on my javascript), **static** and **Hazy** (provided feedback on my ui), **veksen** (provided the best advise on flexbox, which was to understand parent-child relationships).
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
