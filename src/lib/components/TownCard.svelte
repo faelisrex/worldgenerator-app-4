@@ -21,9 +21,11 @@
     <p>Cities and Towns are generated to feature diverse sets of resources. Settlements vary in abundance (or scarcity) of resources which contribute to the settlement's character. The presence of <img class="icon" src="/icons/FarmIcon.svg" alt=""> Farms, for example, indicate nearby farmland. The presence of <img class="icon" src="/icons/SmithyIcon.svg" alt=""> Smithies indicate a local supply of minerals. These resources are listed below: </p>
     <br>
     <TownServices {settlement} /> <br>
-    <h3 class="h3 font-semibold">Quest Board/Rumors</h3>
-    <hr>
-    <QuestBoard {settlement} /> <br>
+    {#if settlement.quests.length > 0}
+      <h3 class="h3 font-semibold">Quest Board/Rumors</h3>
+      <hr>
+      <QuestBoard {settlement} /> <br>
+    {/if}
     <h3 class="h3 font-semibold">Interesting NPCs</h3>
     <hr>
     <InterestingPeopleCorner2 {settlement} />
