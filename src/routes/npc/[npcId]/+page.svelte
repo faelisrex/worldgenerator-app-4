@@ -7,9 +7,10 @@
 </script>
 
 <a href="/#{npc.id}">back</a>
-<div class="variant-filled-primary">
+
+<div class="py-8 px-10 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
     <h2 class="h2">{npc.getName()}</h2>
-    <h3 class="h3">description</h3>
+    <h3 class="h3">Description</h3>
     <p>{npc.description}</p>
     <h3 class="h3">Beliefs</h3>
     {#each npc.values as value}
@@ -23,6 +24,8 @@
         </span>
     </p>
     {/each}
-    <h3 class="h3">Quests</h3>
-    <NpcQuestList {npc} />
+    {#if npc.quests.length>0}
+        <h3 class="h3">Quests</h3>
+        <NpcQuestList {npc} />
+    {/if}
 </div>
