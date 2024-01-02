@@ -8,7 +8,7 @@
 <div class="">
   {#each settlement.npcs as npc}
     <div class="flex flex-row pt-3">
-      <div class="min-w-[200px] max-w-[200px] font-semibold" id={npc.id}>
+      <div class="font-semibold md:min-w-[200px] md:max-w-[200px] sm:min-w-28 sm:max-w-28" id={npc.id}>
         <a href="/npc/{npc.id}">{npc.getName()}</a>
       </div>
       <div class="text-sm pl-2">

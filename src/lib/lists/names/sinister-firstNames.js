@@ -1,5 +1,7 @@
-// Sinister First Names
+import humanFirstNames from './human-firstNames';
+
 export default [
+	...humanFirstNames,
 	'Malachi',
 	'Lilith',
 	'Mordecai',

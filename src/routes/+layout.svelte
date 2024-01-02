@@ -24,5 +24,5 @@
 </script>
 
 <NavBar />
-
+<div class="mb-[50px]"></div>
 <slot />
