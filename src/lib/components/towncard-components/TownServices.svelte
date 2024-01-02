@@ -1,12 +1,6 @@
 <script>
   export let settlement;
 </script>
-<style>
-  .icon {
-    display: inline;
-    height: 1.15rem;
-  }
-</style>
 
 <p>
   {#each settlement.buildings as building}
