@@ -5,7 +5,7 @@
 	}
 </style>
 
-<div class="py-8 px-10 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+<div class="mt-20 py-8 px-10 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
 	<section class="pb-10">
     <div class="">
         <div class="max-w-screen-md">
