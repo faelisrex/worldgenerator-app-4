@@ -105,10 +105,10 @@ const strikingWords = [
 	'famous',
 	'notable',
 	'acclaimed',
-	'lauded',
+	'laudable',
 	'praised',
 	'applauded',
-	'commended'
+	'commendable'
 ];
 const hairColors = [
 	'black',
@@ -415,7 +415,7 @@ export function generateNpcDescriptions(worldObj) {
 	worldObj.npcs.forEach((npc) => {
 		npc.description = `${getRandomEl(initialDescriptors)} ${getRandomEl(
 			individual
-		)} with ${getRandomEl(strikingWords)} ${getRandomEl(hairColors)}, ${getRandomEl(
+		)} with ${addArticle(getRandomEl(strikingWords))} ${getRandomEl(hairColors)}, ${getRandomEl(
 			hairTypes
 		)} hair. Their eyes are ${addArticle(getRandomEl(eyeDescriptions))} shade of ${getRandomEl(
 			eyeColors
